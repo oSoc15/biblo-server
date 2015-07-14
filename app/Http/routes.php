@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('API', 'APIController@overview');
+Route::group(array('prefix' => 'API'), function(){
+  Route::get('/', 'APIController@index');
 
-Route::get('/API/recommendations', 'APIController@recommendations');
+  Route::get('recommendations', 'APIController@recommendations');
+});
