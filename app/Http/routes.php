@@ -15,10 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
-
-
 Route::group(
     ['prefix' => 'admin'],
     function() {
@@ -29,3 +25,10 @@ Route::group(
         Route::get("analytics", "AdminController@analytics");
     }
 );
+
+// Auth Routes
+// ===================
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
