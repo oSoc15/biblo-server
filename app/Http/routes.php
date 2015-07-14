@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('API', 'APIController@overview');
+
+Route::get('/API/recommendations', 'APIController@recommendations');
