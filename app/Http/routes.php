@@ -15,9 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get("admin", "AdminController@index");
+
 Route::group(
     ['prefix' => 'admin'],
     function() {
+
         Route::get("dashboard", "AdminController@dashboard");
 
         Route::get("illustrations", "AdminController@illustrations");
