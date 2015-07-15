@@ -1,0 +1,22 @@
+body {
+  background-color: #eaeaea; }
+
+#page-wrapper h1 {
+  color: #136DA5; }
+#page-wrapper table {
+  border: 1px solid #e7e7e7; }
+  #page-wrapper table tr {
+    height: 50px; }
+
+#side-menu li a {
+  background-color: #eaeaea;
+  color: #136DA5;
+  -webkit-transition: background-color 2s;
+  -moz-transition: background-color 1s;
+  -o-transition: background-color 1s;
+  transition: background-color 2s; }
+#side-menu li a:hover {
+  background-color: #136DA5;
+  color: #eaeaea; }
+
+/*# sourceMappingURL=admin.css.map */

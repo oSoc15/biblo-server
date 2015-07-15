@@ -1,4 +1,7 @@
 {
   "css/app.css": "css/app-b62e8837.css",
-  "js/app.js": "js/app-4dce330f.js"
+  "css/bootstrap-table.css": "css/bootstrap-table-cc1d18c5.css",
+  "js/app.js": "js/app-4dce330f.js",
+  "js/admin.js": "js/admin-614ede7a.js",
+  "js/queryParams.js": "js/queryParams-7491daa2.js"
 }

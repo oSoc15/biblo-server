@@ -33,7 +33,7 @@
         <!-- /.row -->
         <div class="row">
             <div class="col-lg-12">
-                <table data-toggle="table" data-url="scripts/data.json" data-query-params="queryParams" data-pagination="true"
+                <table data-toggle="table" data-url="" data-query-params="queryParams" data-pagination="true"
                         data-search="true">
                     <thead>
                     <tr>
