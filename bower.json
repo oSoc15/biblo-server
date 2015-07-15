@@ -1,38 +1,41 @@
 {
-    "name": "Bieblo",
-    "version": "1.0.1",
-    "homepage": "www.bieblo.be",
-    "authors": [
-        "wesley@wesobi.be",
-        "shaunjanssens@gmail.com",
-        "meulruben@gmail.com"
-    ],
-    "description": "Bower dependencies for Bieblo, an application that recommends books to children. The recommendation is based on a swiping system in which the children swipe certain images (portraying the a mood or certain tag) to the like or dislike pile.",
-    "main": "public/index.php",
-    "dependencies": {
-        "bootstrap-sass-official": "~3.3.5",
-        "fontawesome": "~4.3.0"
-    },
-    "devDependencies": {},
-    "keywords": [
-        "books",
-        "children",
-        "library",
-        "Ghent",
-        "open",
-        "Summer",
-        "of",
-        "code",
-        "#oSoc15",
-        "bibnet",
-        "#teamyungpanda"
-    ],
-    "license": "MIT",
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "test",
-        "tests"
-    ]
+  "name": "Bieblo",
+  "version": "1.0.1",
+  "homepage": "www.bieblo.be",
+  "authors": [
+    "wesley@wesobi.be",
+    "shaunjanssens@gmail.com",
+    "meulruben@gmail.com"
+  ],
+  "description": "Bower dependencies for Bieblo, an application that recommends books to children. The recommendation is based on a swiping system in which the children swipe certain images (portraying the a mood or certain tag) to the like or dislike pile.",
+  "main": "public/index.php",
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.5",
+    "fontawesome": "~4.3.0",
+    "bootstrap-table": "~1.8.1"
+  },
+  "devDependencies": {
+    "startbootstrap-sb-admin-2": "~1.0.7"
+  },
+  "keywords": [
+    "books",
+    "children",
+    "library",
+    "Ghent",
+    "open",
+    "Summer",
+    "of",
+    "code",
+    "#oSoc15",
+    "bibnet",
+    "#teamyungpanda"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
