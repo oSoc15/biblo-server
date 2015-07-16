@@ -1,0 +1,1 @@
+<p>analytics page</p>

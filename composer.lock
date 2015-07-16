@@ -4,8 +4,50 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5c6026b96e6fa11a641b51a6ba976f5e",
+    "hash": "0820b9e2950a25e9ae71f3198d508d0e",
     "packages": [
+        {
+            "name": "bestmomo/scafold",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bestmomo/scafold.git",
+                "reference": "0e6f6e67ad1f8420eaca416efc60253ee937141a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bestmomo/scafold/zipball/0e6f6e67ad1f8420eaca416efc60253ee937141a",
+                "reference": "0e6f6e67ad1f8420eaca416efc60253ee937141a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.1",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bestmomo\\Scafold\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                },
+                {
+                    "name": "Bestmomo",
+                    "email": "grandheretique@free.fr"
+                }
+            ],
+            "description": "To add scafold to Laravel 5.1",
+            "homepage": "http://github.com/bestmomo/scafold",
+            "time": "2015-07-04 09:14:48"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "2.0.0",
@@ -490,6 +532,56 @@
             "time": "2015-07-12 02:27:36"
         },
         {
+            "name": "laravelcollective/html",
+            "version": "v5.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelCollective/html.git",
+                "reference": "0918dac79ff8d294a92048f2d8b3c0c3078139b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/0918dac79ff8d294a92048f2d8b3c0c3078139b0",
+                "reference": "0918dac79ff8d294a92048f2d8b3c0c3078139b0",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "5.1.*",
+                "illuminate/routing": "5.1.*",
+                "illuminate/session": "5.1.*",
+                "illuminate/support": "5.1.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Collective\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                },
+                {
+                    "name": "Adam Engebretson",
+                    "email": "adam@laravelcollective.com"
+                }
+            ],
+            "time": "2015-06-18 02:16:50"
+        },
+        {
             "name": "league/flysystem",
             "version": "1.0.9",
             "source": {
@@ -739,16 +831,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v1.3.0",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "dff239267fd1befa1cd40430c9ed12591aa720ca"
+                "reference": "196f177cfefa0f1f7166c0a05d8255889be12418"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/dff239267fd1befa1cd40430c9ed12591aa720ca",
-                "reference": "dff239267fd1befa1cd40430c9ed12591aa720ca",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/196f177cfefa0f1f7166c0a05d8255889be12418",
+                "reference": "196f177cfefa0f1f7166c0a05d8255889be12418",
                 "shasum": ""
             },
             "require": {
@@ -758,7 +850,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3-dev"
+                    "dev-master": "1.4-dev"
                 }
             },
             "autoload": {
@@ -780,7 +872,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2015-05-02 15:40:40"
+            "time": "2015-07-14 17:31:05"
         },
         {
             "name": "psr/log",
@@ -2923,7 +3015,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "bestmomo/scafold": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
