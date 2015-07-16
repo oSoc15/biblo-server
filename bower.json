@@ -10,8 +10,9 @@
   "description": "Bower dependencies for Bieblo, an application that recommends books to children. The recommendation is based on a swiping system in which the children swipe certain images (portraying the a mood or certain tag) to the like or dislike pile.",
   "main": "public/index.php",
   "dependencies": {
-      "fontawesome": "~4.3.0",
-    "bootstrap-table": "~1.8.1"
+    "fontawesome": "~4.3.0",
+    "bootstrap-table": "~1.8.1",
+    "bootstrap-tagsinput": "~0.5.0"
   },
   "devDependencies": {
     "startbootstrap-sb-admin-2": "~1.0.7"

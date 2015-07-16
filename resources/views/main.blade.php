@@ -14,6 +14,6 @@
 
     <script src="{{elixir('js/app.js')}}"></script>
     <script src="{{elixir('js/admin.js')}}"></script>
-    <script src="{{elixir('js/queryParams.js')}}"></script>
+    <script src="{{elixir('js/script.js')}}"></script>
 </body>
 </html>

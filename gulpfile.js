@@ -25,10 +25,7 @@ var paths = {
 
 elixir(function(mix) {
 
-    mix.sass('app.scss', 'public/css/')
-
-
-        .copy(paths.bootstrap + 'fonts/bootstrap/**', 'public/fonts/bootstrap')
+    mix.copy(paths.bootstrap + 'fonts/bootstrap/**', 'public/fonts/bootstrap')
 
         .copy(paths.fontawesome + 'fonts/**', 'public/fonts/fontawesome')
 
@@ -40,6 +37,8 @@ elixir(function(mix) {
             paths.bower_components  + 'bootstrap-table/dist/bootstrap-table.css',
             paths.admin
         ], 'public/css/bootstrap-table.css')
+
+        .sass('app.scss', 'public/css/')
 
         .scripts([
             paths.jquery    + "dist/jquery.js",
@@ -54,12 +53,14 @@ elixir(function(mix) {
             paths.bower_components + "bootstrap-table/dist/bootstrap-table.js"
         ], 'public/js/admin.js', './')
 
+        .scripts("resources/assets/scripts/*", 'public/js/script.js', './')
+
 
         .version([
             'public/css/app.css',
             'public/css/bootstrap-table.css',
             'public/js/app.js',
             'public/js/admin.js',
-            'public/js/queryParams.js'
+            'public/js/script.js'
         ])
 });

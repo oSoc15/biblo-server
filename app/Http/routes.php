@@ -24,7 +24,11 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get("illustrations", "AdminController@illustrations");
 
         Route::get("analytics", "AdminController@analytics");
+
+        Route::get ("sample-data", "AdminController@sampleData");
     }
+
+
 );
 
 // Auth Routes
