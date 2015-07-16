@@ -17,9 +17,7 @@ Route::get('/', function () {
 
 Route::get("admin", "AdminController@index");
 
-Route::group(
-    ['prefix' => 'admin'],
-    function() {
+Route::group(['prefix' => 'admin'], function () {
 
         Route::get("dashboard", "AdminController@dashboard");
 
@@ -37,11 +35,13 @@ Route::controllers([
 ]);
 
 
-Route::group(array('prefix' => 'API'), function(){
-  Route::get('/', 'APIController@index');
+Route::group(array('prefix' => 'API'), function () {
 
-  Route::get('recommendations', 'APIController@recommendations');
+        Route::get('/', 'APIController@index');
 
-  Route::get('getDataFromBIBNet', 'APIController@getDataFromBIBNet');
-});
+        Route::get('recommendations', 'APIController@recommendations');
+
+        Route::get('getDataFromBIBNet', 'APIController@getDataFromBIBNet');
+    }
+);
 
