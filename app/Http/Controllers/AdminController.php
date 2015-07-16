@@ -32,6 +32,10 @@ class AdminController extends Controller
         return view ("admin.analytics");
     }
 
+    public function addImage() {
+        return view ("admin.add-image");
+    }
+
     public function sampleData(){
         $data = array(
 

@@ -1,1 +1,1 @@
-{"version":3,"sources":["app.scss"],"names":[],"mappings":"AAAA","file":"app.css","sourcesContent":[""],"sourceRoot":"/source/"}
+{"version":3,"sources":["app.scss"],"names":[],"mappings":"AAAA;EACI,wBAAuB,EADzB;;AAKF;EACI,sBAAoB,EADnB;;AAIL;EACA,+BAA6B;EACzB,cAAY;EACZ,YACH,EAJS","file":"app.css","sourcesContent":["*{\n    box-sizing: border-box;\n}\n\n\nbody{\n    padding-bottom:20px;\n}\n\n#sidebar {\nborder-right:1px solid black;\n    height:100%;\n    padding:0\n}\n"],"sourceRoot":"/source/"}

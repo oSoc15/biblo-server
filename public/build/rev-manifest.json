@@ -1,7 +1,8 @@
 {
-  "css/app.css": "css/app-eb99c26c.css",
-  "css/bootstrap-table.css": "css/bootstrap-table-3d851824.css",
+  "css/app.css": "css/app-54af98dc.css",
+  "css/bootstrap-table.css": "css/bootstrap-table-91241aec.css",
+  "css/normalize.css": "css/normalize-1e9c0f3b.css",
   "js/app.js": "js/app-4dce330f.js",
-  "js/admin.js": "js/admin-614ede7a.js",
+  "js/admin.js": "js/admin-f51afa35.js",
   "js/script.js": "js/script-3ccef474.js"
 }

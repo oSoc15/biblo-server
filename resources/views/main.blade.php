@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <title>Biblo Admin-Panel</title>
 
-    <link href="{{elixir('css/app.css')}}" rel="stylesheet">
+
+    <link href="{{elixir('css/normalize.css')}}" rel="stylesheet">
     <link href="{{elixir('css/bootstrap-table.css')}}" rel="stylesheet">
+    <link href="{{elixir('css/app.css')}}" rel="stylesheet">
 </head>
 <body>
 

@@ -23,9 +23,11 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::get("illustrations", "AdminController@illustrations");
 
+        Route::get("add-image", "AdminController@addImage");
+
         Route::get("analytics", "AdminController@analytics");
 
-        Route::get ("sample-data", "AdminController@sampleData");
+        Route::get("sample-data", "AdminController@sampleData");
     }
 
 
