@@ -17,7 +17,6 @@ var elixir = require('laravel-elixir');
 var paths = {
     'bower_components': './vendor/bower_components/',
     'jquery':           './vendor/bower_components/jquery/',
-    'bootstrap':        './vendor/bower_components/bootstrap-sass-official/assets/',
     'bootstrapTable':   './vendor/bower_components/bootstrap-table/dist/',
     'fontawesome':      './vendor/bower_components/fontawesome/',
     'admin':            './resources/assets/sass/admin.css'
@@ -34,6 +33,7 @@ elixir(function(mix) {
         .copy(paths.fontawesome + 'fonts/**', 'public/fonts/fontawesome')
 
         .copy([
+            paths.bower_components  + 'bootstrap/dist/css/bootstrap.css',
             paths.bower_components  + 'metisMenu/dist/metisMenu.css',
             paths.bower_components  + 'startbootstrap-sb-admin-2/dist/css/sb-admin-2.css',
             paths.bower_components  + 'morrisjs/morris.css',
@@ -43,7 +43,7 @@ elixir(function(mix) {
 
         .scripts([
             paths.jquery    + "dist/jquery.js",
-            paths.bootstrap + "javascripts/bootstrap.js",
+            paths.bower_components + 'bootstrap/dist/js/bootstrap.js',
         ], 'public/js/app.js', './')
 
         .scripts([

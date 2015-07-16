@@ -18,7 +18,6 @@
                     </li>
                 </ul>
             </div>
-            <!-- /.sidebar-collapse -->
         </div>
 </div>
 
@@ -28,10 +27,10 @@
                 <h1>Dashboard<!--has to be dynamic based on the a href--></h1>
             </div>
             <!-- /.col-lg-12 -->
-        </div>
+
         <!-- /.row -->
         <!-- /.row -->
-        <div class="row">
+
             <div class="col-lg-12">
                 <table data-toggle="table" data-url="" data-query-params="queryParams" data-pagination="true"
                         data-search="true">
