@@ -13,9 +13,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
+        \DB::connection()->disableQueryLog();
 
-        // $this->call(UserTableSeeder::class);
-
+        $this->call('BookTableSeeder');
         Model::reguard();
     }
 }
