@@ -86,9 +86,58 @@ class APIController extends Controller
      * @
      * @return Recommended books
      */
-    public function recommendations($preferences)
+    public function recommendations()
     {
-      return Response::json(array('name' => 'Steve', 'state' => 'CA'));
+      //$server, $branch, $age, $illustrations
+      //Temp Settings for input
+      $server = "obgent";
+      //$server = $_GET['server'];
+      $branch = "all";
+      //$branch = $_GET['branch'];
+      $age = 3;
+      //$age = $_GET['age'];
+      $illustrations = "";
+      //$illustrations = $_GET['illustrations'];
+
+      //Settings for BIBnet API URL
+      $format = "book";
+      $language = "nederlands";
+
+      switch ($age) {
+        case 1:
+          $age = '(doelgroep:"vanaf 3 jaar" OR doelgroep:"vanaf 4 jaar" OR doelgroep:"vanaf 5 jaar" OR doelgroep:"vanaf 6 jaar" OR doelgroep:"vanaf 7 jaar" OR doelgroep:"informatief -6 jaar" OR doelgroep:"informatief  6 jaar" OR doelgroep:"informatief -8 jaar")';
+        break;
+        case 2:
+          $age = '(doelgroep:"vanaf 8 jaar" OR doelgroep:"vanaf 9 jaar" OR doelgroep:"vanaf 10-11 jaar" OR doelgroep:"informatief +8 jaar”)';
+        break;
+        case 3:
+          $age = '(doelgroep:"vanaf 12-13 jaar" OR doelgroep:"vanaf 14 jaar" OR doelgroep:"informatief +12 jaar”)';
+        break;
+        default:
+          return 'Invalid age.';
+        break;
+      }
+
+      //Build BIBnet API URL
+      $url = "http://" . $server . ".staging.aquabrowser.be//api/v0/search/?q=language:" . $language . " AND format:" . $format . " AND " . $age . "&authorization=26f9ce7cdcbe09df6f0b37d79b6c4dc2";
+
+      $tags = self::getTagsForIllustrations($illustrations);
+
+      //Add tags to URL
+      foreach ($tags as $tag) {
+        //$url = $url . " OR " . $tag;
+      }
+
+      $xml = simplexml_load_file(urlencode($url)); //retrieve URL and parse XML content
+      $json = json_encode($xml);
+      return $json;
+
+      //Encode BIBnet API URL
+      return urlencode($url);
+    }
+
+    public function getTagsForIllustrations($illustrations){
+      return ["toveren", "pony", "dansen"];
     }
 
     public function getDataFromBIBNet(){
