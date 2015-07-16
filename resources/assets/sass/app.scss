@@ -1,3 +1,9 @@
+$black: #000;
+$white: #fff;
+$grey: #eaeaea;
+$blue: #136DA5;
+$border-color: #e7e7e7;
+
 *{
     box-sizing: border-box;
 }
@@ -8,7 +14,12 @@ body{
 
 
 #sidebar {
-border-right:1px solid black;
+    background-color:$grey;
+    position: fixed;
+    height:100%;
+    top:0;
+    left:0;
+    border-right:1px solid black;
     padding:0;
 }
 
@@ -16,7 +27,7 @@ border-right:1px solid black;
     margin-top:20px;
 
     a {
-        color:white;
+        color:$white;
     }
 }
 

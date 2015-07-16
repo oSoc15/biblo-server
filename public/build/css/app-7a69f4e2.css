@@ -2,13 +2,18 @@
   box-sizing: border-box; }
 
 #sidebar {
+  background-color: #eaeaea;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
   border-right: 1px solid black;
   padding: 0; }
 
 .btn-add {
   margin-top: 20px; }
   .btn-add a {
-    color: white; }
+    color: #fff; }
 
 .search {
   margin-bottom: 15px; }

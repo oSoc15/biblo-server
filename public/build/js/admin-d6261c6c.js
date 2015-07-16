@@ -326,10 +326,10 @@
             return 'Loading, please wait...';
         },
         formatRecordsPerPage: function (pageNumber) {
-            return sprintf('%s records per page', pageNumber);
+            return sprintf('%s records per pagina', pageNumber);
         },
         formatShowingRows: function (pageFrom, pageTo, totalRows) {
-            return sprintf('Showing %s to %s of %s rows', pageFrom, pageTo, totalRows);
+            return sprintf('Toon rij %s tot %s van %s rijen ', pageFrom, pageTo, totalRows);
         },
         formatSearch: function () {
             return 'Search';
@@ -1031,7 +1031,7 @@
         }
 
         html.push(
-            '<div class="pull-' + this.options.paginationDetailHAlign + ' pagination-detail">',
+            '<div class="pull-right pagination-detail">',
             '<span class="pagination-info">',
             this.options.formatShowingRows(this.pageFrom, this.pageTo, this.options.totalRows),
             '</span>');

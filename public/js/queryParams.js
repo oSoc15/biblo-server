@@ -6,11 +6,11 @@ function coverFormatter(value) {
 function operateFormatter(value, row, index){
     return [
         '<a class="edit" href="" title="Edit">',
-        'Edit ',
+        'Wijzig ',
         '</a>',
         '|',
         '<a class="remove" href="" title="Remove">',
-        ' Delete',
+        ' Verwijderen ',
         '</a>'
     ].join('');
 };

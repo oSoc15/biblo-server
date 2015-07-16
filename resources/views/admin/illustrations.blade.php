@@ -3,10 +3,10 @@
 
 @section('content')
 
-        <div id="page-wrapper" class="col-lg-6 col-lg-push-1">
+        <div id="page-wrapper" class="col-lg-6 col-lg-push-3">
             <div class="row">
                 <div class="col-lg-6">
-                    <h1>Illustratie-lijst<!--has to be dynamic based on the a href--></h1>
+                    <h1>Illustraties<!--has to be dynamic based on the a href--></h1>
                 </div>
                 <div class="col-lg-6 text-right">
                     <div class="btn btn-success btn-add">
