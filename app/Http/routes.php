@@ -12,22 +12,26 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
-Route::get("admin", "AdminController@index");
+Route::get('admin', 'AdminController@index');
 
 Route::group(['prefix' => 'admin'], function () {
 
-        Route::get("dashboard", "AdminController@dashboard");
+        Route::get('/', 'AdminController@dashboard');
 
-        Route::get("illustrations", "AdminController@illustrations");
+        Route::get('dashboard', 'AdminController@dashboard');
 
-        Route::get("add-image", "AdminController@addImage");
+        Route::get("illustrations", ['as' => 'illustrations', 'uses' => 'AdminController@illustrations']);
+        Route::get('illustrations/create', ['as' => 'illustrations.create', 'uses' => 'AdminController@createIllustration']);
+        Route::post('illustrations/create', ['as' => 'illustrations.create', 'uses' => 'AdminController@storeIllustration']);
+        Route::get('illustrations/edit/{id}', ['as' => 'illustrations.edit', 'uses' => 'AdminController@editIllustration']);
+        Route::post('illustrations/edit/{id}', ['as' => 'illustrations.edit', 'uses' => 'AdminController@updateIllustration']);
 
-        Route::get("analytics", "AdminController@analytics");
+        Route::get('analytics', "AdminController@analytics");
 
-        Route::get("sample-data", "AdminController@sampleData");
+        Route::get('sample-data', 'AdminController@sampleData');
     }
 
 

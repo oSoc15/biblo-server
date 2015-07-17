@@ -23,4 +23,17 @@
   text-align: right;
   padding: 7px 5px 7px 0; }
 
+/*illustrations*/
+#illustrations table {
+  margin-top: 20px;
+  border: 1px solid #000; }
+  #illustrations table thead tr th {
+    text-align: center;
+    width: 250px;
+    padding: 10px; }
+  #illustrations table tbody tr th {
+    text-align: center;
+    width: 250px;
+    padding: 10px; }
+
 /*# sourceMappingURL=app.css.map */

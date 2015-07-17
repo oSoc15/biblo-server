@@ -18,8 +18,7 @@ var paths = {
     'bower_components': './vendor/bower_components/',
     'jquery':           './vendor/bower_components/jquery/',
     'bootstrapTable':   './vendor/bower_components/bootstrap-table/dist/',
-    'fontawesome':      './vendor/bower_components/fontawesome/',
-    'admin':            './resources/assets/sass/admin.scss'
+    'fontawesome':      './vendor/bower_components/fontawesome/'
 };
 
 
@@ -33,20 +32,17 @@ elixir(function(mix) {
 
         .copy([
             paths.bower_components  + 'bootstrap/dist/css/bootstrap.css',
-            paths.bower_components  + 'bootstrap-table/dist/bootstrap-table.css',
-            paths.bower_components  + 'bootstrap-tagsinput/dist/bootstrap-tagsinput.css',
-            paths.admin
+            paths.bower_components  + 'bootstrap-tagsinput/dist/bootstrap-tagsinput.css'
         ], 'public/css/bootstrap-table.css')
 
         .sass('app.scss', 'public/css/')
 
         .scripts([
             paths.jquery    + "dist/jquery.js",
-            paths.bower_components + 'bootstrap/dist/js/bootstrap.js',
+            paths.bower_components + 'bootstrap/dist/js/bootstrap.js'
         ], 'public/js/app.js', './')
 
         .scripts([
-            paths.bower_components + "bootstrap-table/dist/bootstrap-table.js",
             paths.bower_components  + 'bootstrap-tagsinput/dist/bootstrap-tagsinput.js'
         ], 'public/js/admin.js', './')
 

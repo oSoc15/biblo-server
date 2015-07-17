@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Illustration extends Model
 {
   protected $table = 'illustrations';
+    protected $fillable = array('name');
 
 
   public $timestaps = true;

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Illustration as Illustration;
 
 
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -17,6 +18,6 @@ class DatabaseSeeder extends Seeder
     {
       Model::unguard();
 
-      $this->call( 'IllustrationTableSeeder' );
+      $this->call('IllustrationTableSeeder');
     }
 }
