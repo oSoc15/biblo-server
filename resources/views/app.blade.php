@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Laravel</title>
 
-	 <link href="{{elixir('css/normalize.css')}}" rel="stylesheet">
+	    <link href="{{elixir('css/normalize.css')}}" rel="stylesheet">
         <link href="{{elixir('css/bootstrap-table.css')}}" rel="stylesheet">
         <link href="{{elixir('css/app.css')}}" rel="stylesheet">
 
