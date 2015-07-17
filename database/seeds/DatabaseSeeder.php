@@ -3,6 +3,9 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Illustration as Illustration;
+
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -12,8 +15,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call('IllustrationTableSeeder');
+      Model::unguard();
 
-        $this->command->info('Illustration table seeded!');
+      $this->call( 'IllustrationTableSeeder' );
     }
 }

@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Illustration extends Model
 {
   protected $table = 'illustrations';
+
+
   public $timestaps = true;
 
   public function tags()
@@ -14,7 +16,8 @@ class Illustration extends Model
       return $this->belongsToMany('App\Tag');
   }
 
-  public function create(){
-
+  public function answers()
+  {
+      return $this->hasMany('App\Like');
   }
 }

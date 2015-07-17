@@ -147,10 +147,10 @@ class APIController extends Controller
       //Base URL where the illustrations can be found
       $base_path = "";
 
-      $illustrations = Illustration::all();
+      $illustrations = Illustration::all(['id']);
 
       foreach ($illustrations as $index => $illustration) {
-        $illustrations["url"] = $base_path . $illustrations['id'];
+        $illustration["url"] = $base_path . $illustration['id'] . ".png";
       }
 
       return $illustrations;

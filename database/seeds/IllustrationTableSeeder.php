@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+use App\Illustration;
 
 class IllustrationTableSeeder extends Seeder
 {
@@ -11,8 +13,12 @@ class IllustrationTableSeeder extends Seeder
      */
     public function run()
     {
-      DB::table('illustrations')->delete();
+      // clear table
+        Illustration::truncate();
+        // add 1st row
+        Illustration::create( [
+            'name' => 'Bieblo als tovenaar'
+        ] );
 
-      Illustration:create(['name' => 'Bieblo als tovenaar']);
     }
 }
