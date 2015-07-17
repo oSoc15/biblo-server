@@ -1,3 +1,4 @@
+
 function coverFormatter(value) {
     return '<img src="' + value + '" alt="image" class="table__image">';
 }

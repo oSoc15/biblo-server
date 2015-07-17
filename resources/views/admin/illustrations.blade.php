@@ -22,7 +22,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <table data-toggle="table" data-url="http://biblo.dev/admin/sample-data" data-query-params="queryParams" data-pagination="true"
+                    <table data-toggle="table" data-url="/admin/sample-data" data-query-params="queryParams" data-pagination="true"
                             data-search="true">
                         <thead>
                         <tr>

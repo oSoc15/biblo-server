@@ -19,7 +19,7 @@ var paths = {
     'jquery':           './vendor/bower_components/jquery/',
     'bootstrapTable':   './vendor/bower_components/bootstrap-table/dist/',
     'fontawesome':      './vendor/bower_components/fontawesome/',
-    'admin':            './resources/assets/sass/admin.css'
+    'admin':            './resources/assets/sass/admin.scss'
 };
 
 
