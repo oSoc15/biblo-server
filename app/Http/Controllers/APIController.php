@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Response;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Illustration;
 
 class APIController extends Controller
 {
@@ -136,29 +137,22 @@ class APIController extends Controller
       return urlencode($url);
     }
 
-    public function getTagsForIllustrations($illustrations){
-      return ["toveren", "pony", "dansen"];
-    }
+    /**
+     * Get recommendations.
+     * @
+     * @return Recommended books
+     */
+    public function illustrations()
+    {
+      //Base URL where the illustrations can be found
+      $base_path = "";
 
-    public function getDataFromBIBNet(){
-      $page = 200;
-      $format = "boek";
-      $age = "ageYouth";
-      $data = [];
-      for($x = 1; $x <= 1; $x++){
-        $url = urlencode("http://obgent.staging.aquabrowser.be//api/v0/search/?page=" . $x . "&q=age:" . $age . " AND format:" . $format . "&authorization=26f9ce7cdcbe09df6f0b37d79b6c4dc2");
+      $illustrations = Illustration::all();
 
-        $xml = simplexml_load_file($url); //retrieve URL and parse XML content
-
-        //convert the xml to json
-        $json = json_encode($xml);
-
-        $results = json_decode($json,TRUE);
-        $data = array_merge($data, $results['results']['result']);
+      foreach ($illustrations as $index => $illustration) {
+        $illustrations["url"] = $base_path . $illustrations['id'];
       }
-      $fp = fopen('results.json', 'w');
-      fwrite($fp, json_encode($data));
-      fclose($fp);
-      return $data;
+
+      return $illustrations;
     }
 }

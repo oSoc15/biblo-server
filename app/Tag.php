@@ -9,8 +9,4 @@ class Tag extends Model
     protected $table = 'tags';
     public $timestaps = true;
 
-    public function books()
-    {
-        return $this->belongsToMany('App\Book');
-    }
 }
