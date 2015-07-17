@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box; }
 
+body {
+}
+
 #sidebar {
   background-color: #eaeaea;
   position: fixed;
@@ -22,5 +25,7 @@
   list-style: none;
   text-align: right;
   padding: 7px 5px 7px 0; }
+
+
 
 /*# sourceMappingURL=app.css.map */
