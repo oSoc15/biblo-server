@@ -48,11 +48,9 @@ Route::group(array('prefix' => 'API'), function () {
         Route::get('recommendations', 'APIController@recommendations');
 
         Route::get('getDataFromBIBNet', 'APIController@getDataFromBIBNet');
+
+        Route::get('illustrations', 'APIController@illustrations');
+
     }
 );
 
-<<<<<<< HEAD
-=======
-  Route::get('illustrations', 'APIController@illustrations');
-});
->>>>>>> API
