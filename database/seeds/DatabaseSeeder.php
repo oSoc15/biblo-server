@@ -3,6 +3,9 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Illustration as Illustration;
+
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -12,10 +15,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Model::unguard();
-        \DB::connection()->disableQueryLog();
+      Model::unguard();
 
-        $this->call('BookTableSeeder');
-        Model::reguard();
+      $this->call( 'IllustrationTableSeeder' );
     }
 }

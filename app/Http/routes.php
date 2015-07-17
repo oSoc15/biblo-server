@@ -51,3 +51,8 @@ Route::group(array('prefix' => 'API'), function () {
     }
 );
 
+<<<<<<< HEAD
+=======
+  Route::get('illustrations', 'APIController@illustrations');
+});
+>>>>>>> API
