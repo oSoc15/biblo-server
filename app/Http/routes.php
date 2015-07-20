@@ -18,16 +18,20 @@ Route::get('/', function () {
 Route::get('admin', 'AdminController@index');
 
 Route::group(['prefix' => 'admin'], function () {
-
-        Route::get('/', 'AdminController@dashboard');
-
+        /*Main route for admin = direct to illustrations page*/
+        Route::get('/', 'AdminController@illustrations');
+        /*Route to dashboard*/
         Route::get('dashboard', 'AdminController@dashboard');
-
-        Route::get("illustrations", ['as' => 'illustrations', 'uses' => 'AdminController@illustrations']);
-        Route::get('illustrations/create', ['as' => 'illustrations.create', 'uses' => 'AdminController@createIllustration']);
-        Route::post('illustrations/create', ['as' => 'illustrations.create', 'uses' => 'AdminController@storeIllustration']);
-        Route::get('illustrations/edit/{id}', ['as' => 'illustrations.edit', 'uses' => 'AdminController@editIllustration']);
-        Route::post('illustrations/edit/{id}', ['as' => 'illustrations.edit', 'uses' => 'AdminController@updateIllustration']);
+        /*Route to illustrations page */
+        Route::get("illustrations",             ['as' => 'illustrations',           'uses' => 'AdminController@illustrations']);
+        /*Routes get/post for creating an illustration*/
+        Route::get('illustrations/create',      ['as' => 'illustrations.create',    'uses' => 'AdminController@createIllustration']);
+        Route::post('illustrations/create',     ['as' => 'illustrations.create',    'uses' => 'AdminController@storeIllustration']);
+        /*Routes for editing illustration*/
+        Route::get('illustrations/edit/{id}',   ['as' => 'illustrations.edit',      'uses' => 'AdminController@editIllustration']);
+        Route::post('illustrations/edit/{id}',  ['as' => 'illustrations.edit',      'uses' => 'AdminController@updateIllustration']);
+        /*Routes for removing picture */
+        Route::get('illustrations/remove/{id}', ['as' => 'illustrations.remove',    'uses' => 'AdminController@removeIllustration']);
 
         Route::get('analytics', "AdminController@analytics");
 

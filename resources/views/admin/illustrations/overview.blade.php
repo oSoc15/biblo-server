@@ -37,7 +37,7 @@
                                 <tr>
                                     <th><img src="/images/{{$illustration->id}}.png" alt="plaatje"/></th>
                                     <th>{{$illustration->name}}</th>
-                                    <th><a href="{{ route('illustrations.edit', array($illustration->id)) }}">Wijzigen</a> | <a href="#">Verwijderen</a></th>
+                                    <th><a href="{{ route('illustrations.edit', array($illustration->id)) }}">Wijzigen</a> | <a href="{{route('illustrations.remove', array($illustration->id))}}">Verwijderen</a></th>
                                 </tr>
                             @endforeach
 
