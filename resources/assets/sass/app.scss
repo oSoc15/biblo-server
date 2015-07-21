@@ -20,8 +20,13 @@ body{
     height:100%;
     top:0;
     left:0;
-    border-right:1px solid black;
     padding:0;
+
+    .sidebar-greeting{
+        padding:15px 0 15px 0;
+        color:$white;
+        background-color:$blue;
+    }
 }
 
 .btn-add{
