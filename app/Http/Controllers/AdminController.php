@@ -39,7 +39,7 @@ class AdminController extends Controller
     }
 
     public function storeIllustration() {
-        $input = Request::all(); /*haal alles af */
+        $input = Request::all(); /*  haal alles af */
 
         $illustration = new Illustration(); /* variabele die nieuwe illustratie is */
         $illustration->fill($input); /* vult variabele (die een illustratie is) met informatie die opgehaald wordt */
