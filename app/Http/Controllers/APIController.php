@@ -32,7 +32,12 @@ class APIController extends Controller
     //$illustrations = $_GET['disliked'];
     $this->storeLikesDislikes($likes, $dislikes);
 
+    $tagsString = "";
     $tags = $this->getTagsForIllustrations();
+    $tagsString = $tagsString . array_pop($tags);
+    foreach($tags as $tag){
+      $tagsString = $tagsString . " OR " . $tag;
+    }
 
     //Settings for BIBnet API URL
     $format = "book";
@@ -54,22 +59,21 @@ class APIController extends Controller
       break;
     }
 
-    //Build BIBnet API URL
-    $url = "http://" . $server . ".staging.aquabrowser.be//api/v0/search/?q=language:" . $language . " AND format:" . $format . " AND " . $age . "&authorization=26f9ce7cdcbe09df6f0b37d79b6c4dc2";
 
+    //Build BIBnet API URL
+    $url = "http://" . $server . ".staging.aquabrowser.be//api/v0/search/?q=" . $tagsString . " AND (language:" . $language . " AND format:" . $format . " AND " . $age . ")&authorization=26f9ce7cdcbe09df6f0b37d79b6c4dc2";
 
     $xml = simplexml_load_file(urlencode($url)); //retrieve URL and parse XML content
     $json = json_encode($xml);
 
     //convert the json to an array
     $temp = json_decode($json,TRUE);
-    $results = $temp['results'];
+    $results = $temp['results']['result'];
     //will hold the final books
     $output = [];
-
-    for ($x = 0; $x <= 19; $x++) {
+    for ($x = 0; $x <= sizeof($results)-1; $x++) {
       //random index
-      $result = $results['result'][$x];
+      $result = $results[$x];
 
       //set array
       $temp = [
@@ -98,12 +102,18 @@ class APIController extends Controller
         $temp["description"] = "Geen beschrijving te vinden.";
       }
 
-      //check if genres is set
-      if(is_array($result['genres']['genre'])){
-        $temp["genres"] = implode(", ",array_unique($result['genres']['genre']));
-      }else{
-        $temp["genres"] = $result['genres']['genre'];
+      if(array_key_exists('genres', $result)){
+        //check if genres is set
+        if(is_array($result['genres']['genre'])){
+          $temp["genres"] = implode(", ",array_unique($result['genres']['genre']));
+        }else{
+          $temp["genres"] = $result['genres']['genre'];
+        }
       }
+      else{
+        $temp["genres"] = "Geen genres te vinden.";
+      }
+
 
       array_push($output, $temp);
     }
