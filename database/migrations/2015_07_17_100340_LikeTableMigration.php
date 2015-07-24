@@ -14,7 +14,7 @@ class LikeTableMigration extends Migration
     {
       Schema::create('likes', function(Blueprint $table){
         $table->increments('id');
-        $table->boolval('liked');
+        $table->boolean('liked');
         $table->timestamps('created_at');
       });
     }

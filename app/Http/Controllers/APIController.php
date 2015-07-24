@@ -122,19 +122,54 @@ class APIController extends Controller
       //Build BIBnet API URL
       $url = "http://" . $server . ".staging.aquabrowser.be//api/v0/search/?q=language:" . $language . " AND format:" . $format . " AND " . $age . "&authorization=26f9ce7cdcbe09df6f0b37d79b6c4dc2";
 
-      $tags = self::getTagsForIllustrations($illustrations);
-
-      //Add tags to URL
-      foreach ($tags as $tag) {
-        //$url = $url . " OR " . $tag;
-      }
 
       $xml = simplexml_load_file(urlencode($url)); //retrieve URL and parse XML content
       $json = json_encode($xml);
-      return $json;
 
-      //Encode BIBnet API URL
-      return urlencode($url);
+      //convert the json to an array
+      $temp = json_decode($json,TRUE);
+      $results = $temp['results'];
+      //will hold the final books
+      $output = [];
+
+      //pick 8 (for now random) books
+        for ($x = 0; $x <= 8; $x++) {
+          //random index
+          $result = $results['result'][rand(0, sizeof($results['result'])-1)];
+
+          //set array
+          $temp = [
+            "coverimage" => $result['coverimage']['url'] . "&coversize=large",
+            "title" => $result['titles']['short-title']
+          ];
+
+          //check if author is set
+          if(array_key_exists('authors', $result)){
+            $temp["author"] = $result['authors']['main-author'];
+          }
+          else{
+            $temp["author"] = "Geen auteur te vinden.";
+          }
+
+          //check if summary is set
+          if(array_key_exists('summaries', $result)){
+            $temp["description"] = $result['summaries']['summary'];
+          }
+          else{
+            $temp["description"] = "Geen beschrijving te vinden.";
+          }
+
+          //check if genres is set
+          if(is_array($result['genres']['genre'])){
+            $temp["genres"] = implode(", ",array_unique($result['genres']['genre']));
+          }else{
+            $temp["genres"] = $result['genres']['genre'];
+          }
+
+          array_push($output, $temp);
+        }
+        //encode the array to json and return it
+        return json_encode($output);
     }
 
     /**
