@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(array('prefix' => 'API'), function(){
+  Route::get('/', 'APIController@index');
+
+  Route::get('recommendations', 'APIController@recommendations');
+
+  Route::get('illustrations', 'APIController@illustrations');
+});

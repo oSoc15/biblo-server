@@ -1,0 +1,166 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'localtunnel' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 verbose cache add [ 'localtunnel', null ]
+5 verbose cache add name=undefined spec="localtunnel" args=["localtunnel",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'localtunnel',
+6 verbose parsed url   path: 'localtunnel',
+6 verbose parsed url   href: 'localtunnel' }
+7 silly lockFile a0661bc8-localtunnel localtunnel
+8 verbose lock localtunnel /Users/rubenmeul/.npm/a0661bc8-localtunnel.lock
+9 silly lockFile a0661bc8-localtunnel localtunnel
+10 silly lockFile a0661bc8-localtunnel localtunnel
+11 verbose addNamed [ 'localtunnel', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile c752cf78-localtunnel localtunnel@
+14 verbose lock localtunnel@ /Users/rubenmeul/.npm/c752cf78-localtunnel.lock
+15 silly addNameRange { name: 'localtunnel', range: '*', hasData: false }
+16 verbose request where is /localtunnel
+17 verbose request registry https://registry.npmjs.org/
+18 verbose request id fd02152465b6886d
+19 verbose url raw /localtunnel
+20 verbose url resolving [ 'https://registry.npmjs.org/', './localtunnel' ]
+21 verbose url resolved https://registry.npmjs.org/localtunnel
+22 verbose request where is https://registry.npmjs.org/localtunnel
+23 info trying registry request attempt 1 at 18:45:47
+24 http GET https://registry.npmjs.org/localtunnel
+25 http 200 https://registry.npmjs.org/localtunnel
+26 silly registry.get cb [ 200,
+26 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+26 silly registry.get     etag: '"BD6XR3ST4C5KX3QMW73JOP36J"',
+26 silly registry.get     'content-type': 'application/json',
+26 silly registry.get     'cache-control': 'max-age=60',
+26 silly registry.get     'content-length': '25306',
+26 silly registry.get     'accept-ranges': 'bytes',
+26 silly registry.get     date: 'Fri, 24 Jul 2015 16:45:45 GMT',
+26 silly registry.get     via: '1.1 varnish',
+26 silly registry.get     age: '10',
+26 silly registry.get     connection: 'keep-alive',
+26 silly registry.get     'x-served-by': 'cache-ams4143-AMS',
+26 silly registry.get     'x-cache': 'HIT',
+26 silly registry.get     'x-cache-hits': '2',
+26 silly registry.get     'x-timer': 'S1437756345.589006,VS0,VE0',
+26 silly registry.get     vary: 'Accept' } ]
+27 silly addNameRange number 2 { name: 'localtunnel', range: '*', hasData: true }
+28 silly addNameRange versions [ 'localtunnel',
+28 silly addNameRange   [ '0.0.0',
+28 silly addNameRange     '0.0.1',
+28 silly addNameRange     '0.0.2',
+28 silly addNameRange     '0.0.3',
+28 silly addNameRange     '0.0.4',
+28 silly addNameRange     '0.1.0',
+28 silly addNameRange     '0.1.1',
+28 silly addNameRange     '0.1.2',
+28 silly addNameRange     '0.1.3',
+28 silly addNameRange     '0.2.0',
+28 silly addNameRange     '0.2.1',
+28 silly addNameRange     '0.2.2',
+28 silly addNameRange     '1.0.0',
+28 silly addNameRange     '1.1.0',
+28 silly addNameRange     '1.1.1',
+28 silly addNameRange     '1.1.2',
+28 silly addNameRange     '1.2.0',
+28 silly addNameRange     '1.3.0',
+28 silly addNameRange     '1.4.0',
+28 silly addNameRange     '1.5.0',
+28 silly addNameRange     '1.5.1',
+28 silly addNameRange     '1.6.0',
+28 silly addNameRange     '1.7.0' ] ]
+29 verbose addNamed [ 'localtunnel', '1.7.0' ]
+30 verbose addNamed [ '1.7.0', '1.7.0' ]
+31 silly lockFile 9b4a9b8f-localtunnel-1-7-0 localtunnel@1.7.0
+32 verbose lock localtunnel@1.7.0 /Users/rubenmeul/.npm/9b4a9b8f-localtunnel-1-7-0.lock
+33 silly lockFile c1289ea0-ocaltunnel-localtunnel-1-7-0-tgz https://registry.npmjs.org/localtunnel/-/localtunnel-1.7.0.tgz
+34 verbose lock https://registry.npmjs.org/localtunnel/-/localtunnel-1.7.0.tgz /Users/rubenmeul/.npm/c1289ea0-ocaltunnel-localtunnel-1-7-0-tgz.lock
+35 verbose addRemoteTarball [ 'https://registry.npmjs.org/localtunnel/-/localtunnel-1.7.0.tgz',
+35 verbose addRemoteTarball   '6128bc10013efa87aabc6f4393a80a0a6df33a63' ]
+36 info retry fetch attempt 1 at 18:45:48
+37 verbose fetch to= /var/folders/55/2vx1l7xd7_5fsfmltmb4lz280000gn/T/npm-2278-dVKy_2pA/registry.npmjs.org/localtunnel/-/localtunnel-1.7.0.tgz
+38 http GET https://registry.npmjs.org/localtunnel/-/localtunnel-1.7.0.tgz
+39 http 200 https://registry.npmjs.org/localtunnel/-/localtunnel-1.7.0.tgz
+40 silly lockFile c1289ea0-ocaltunnel-localtunnel-1-7-0-tgz https://registry.npmjs.org/localtunnel/-/localtunnel-1.7.0.tgz
+41 silly lockFile c1289ea0-ocaltunnel-localtunnel-1-7-0-tgz https://registry.npmjs.org/localtunnel/-/localtunnel-1.7.0.tgz
+42 silly lockFile 9b4a9b8f-localtunnel-1-7-0 localtunnel@1.7.0
+43 silly lockFile 9b4a9b8f-localtunnel-1-7-0 localtunnel@1.7.0
+44 silly lockFile c752cf78-localtunnel localtunnel@
+45 silly lockFile c752cf78-localtunnel localtunnel@
+46 silly resolved [ { author: { name: 'Roman Shtylman', email: 'shtylman@gmail.com' },
+46 silly resolved     name: 'localtunnel',
+46 silly resolved     description: 'expose localhost to the world',
+46 silly resolved     version: '1.7.0',
+46 silly resolved     license: 'MIT',
+46 silly resolved     repository:
+46 silly resolved      { type: 'git',
+46 silly resolved        url: 'git://github.com/shtylman/localtunnel.git' },
+46 silly resolved     dependencies:
+46 silly resolved      { request: '2.11.4',
+46 silly resolved        yargs: '3.15.0',
+46 silly resolved        debug: '0.7.4',
+46 silly resolved        openurl: '1.1.0' },
+46 silly resolved     devDependencies: { mocha: '~1.17.0' },
+46 silly resolved     scripts: { test: 'mocha --ui qunit --reporter list --timeout 10000 -- test/index.js' },
+46 silly resolved     bin: { lt: './bin/client' },
+46 silly resolved     main: './client.js',
+46 silly resolved     gitHead: '4f97434a69c1628fd282f3c626f7f72304b50b2f',
+46 silly resolved     bugs: { url: 'https://github.com/shtylman/localtunnel/issues' },
+46 silly resolved     homepage: 'https://github.com/shtylman/localtunnel#readme',
+46 silly resolved     _id: 'localtunnel@1.7.0',
+46 silly resolved     _shasum: '6128bc10013efa87aabc6f4393a80a0a6df33a63',
+46 silly resolved     _from: 'localtunnel@',
+46 silly resolved     _npmVersion: '2.11.1',
+46 silly resolved     _nodeVersion: '0.10.38',
+46 silly resolved     _npmUser: { name: 'defunctzombie', email: 'shtylman@gmail.com' },
+46 silly resolved     dist:
+46 silly resolved      { shasum: '6128bc10013efa87aabc6f4393a80a0a6df33a63',
+46 silly resolved        tarball: 'http://registry.npmjs.org/localtunnel/-/localtunnel-1.7.0.tgz' },
+46 silly resolved     maintainers: [ [Object] ],
+46 silly resolved     directories: {},
+46 silly resolved     _resolved: 'https://registry.npmjs.org/localtunnel/-/localtunnel-1.7.0.tgz' } ]
+47 info install localtunnel@1.7.0 into /usr/local/lib
+48 info installOne localtunnel@1.7.0
+49 verbose lib/node_modules/localtunnel unbuild
+50 verbose tar unpack /Users/rubenmeul/.npm/localtunnel/1.7.0/package.tgz
+51 silly lockFile 64ac3b3b-cal-lib-node-modules-localtunnel tar:///usr/local/lib/node_modules/localtunnel
+52 verbose lock tar:///usr/local/lib/node_modules/localtunnel /Users/rubenmeul/.npm/64ac3b3b-cal-lib-node-modules-localtunnel.lock
+53 silly lockFile a9dfb663-pm-localtunnel-1-7-0-package-tgz tar:///Users/rubenmeul/.npm/localtunnel/1.7.0/package.tgz
+54 verbose lock tar:///Users/rubenmeul/.npm/localtunnel/1.7.0/package.tgz /Users/rubenmeul/.npm/a9dfb663-pm-localtunnel-1-7-0-package-tgz.lock
+55 silly gunzTarPerm modes [ '755', '644' ]
+56 error Error: EACCES, mkdir '/usr/local/lib/node_modules/localtunnel'
+56 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/localtunnel']
+56 error   errno: 3,
+56 error   code: 'EACCES',
+56 error   path: '/usr/local/lib/node_modules/localtunnel',
+56 error   fstream_type: 'Directory',
+56 error   fstream_path: '/usr/local/lib/node_modules/localtunnel',
+56 error   fstream_class: 'DirWriter',
+56 error   fstream_stack:
+56 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+56 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
+56 error      'Object.oncomplete (fs.js:108:15)' ] }
+57 error Please try running this command again as root/Administrator.
+58 error System Darwin 15.0.0
+59 error command "node" "/usr/local/bin/npm" "install" "-g" "localtunnel"
+60 error cwd /Applications/MAMP/htdocs/oSoc15/BIBnetWeb
+61 error node -v v0.10.35
+62 error npm -v 1.4.28
+63 error path /usr/local/lib/node_modules/localtunnel
+64 error fstream_path /usr/local/lib/node_modules/localtunnel
+65 error fstream_type Directory
+66 error fstream_class DirWriter
+67 error code EACCES
+68 error errno 3
+69 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/localtunnel'
+70 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+70 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
+70 error fstream_stack Object.oncomplete (fs.js:108:15)
+71 verbose exit [ 3, true ]
