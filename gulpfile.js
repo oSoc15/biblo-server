@@ -18,48 +18,43 @@ var paths = {
     'bower_components': './vendor/bower_components/',
     'jquery':           './vendor/bower_components/jquery/',
     'bootstrapTable':   './vendor/bower_components/bootstrap-table/dist/',
-    'fontawesome':      './vendor/bower_components/fontawesome/',
-    'admin':            './resources/assets/sass/admin.css'
+    'fontawesome':      './vendor/bower_components/fontawesome/'
 };
 
 
 elixir(function(mix) {
 
-    mix.sass('app.scss', 'public/css/')
-
-
-        .copy(paths.bootstrap + 'fonts/bootstrap/**', 'public/fonts/bootstrap')
+    mix.copy(paths.bootstrap + 'fonts/bootstrap/**', 'public/fonts/bootstrap')
 
         .copy(paths.fontawesome + 'fonts/**', 'public/fonts/fontawesome')
 
+        .copy(paths.bower_components + 'normalize.css/normalize.css', 'public/css/normalize.css')
+
         .copy([
             paths.bower_components  + 'bootstrap/dist/css/bootstrap.css',
-            paths.bower_components  + 'metisMenu/dist/metisMenu.css',
-            paths.bower_components  + 'startbootstrap-sb-admin-2/dist/css/sb-admin-2.css',
-            paths.bower_components  + 'morrisjs/morris.css',
-            paths.bower_components  + 'bootstrap-table/dist/bootstrap-table.css',
-            paths.admin
+            paths.bower_components  + 'bootstrap-tagsinput/dist/bootstrap-tagsinput.css'
         ], 'public/css/bootstrap-table.css')
+
+        .sass('app.scss', 'public/css/')
 
         .scripts([
             paths.jquery    + "dist/jquery.js",
-            paths.bower_components + 'bootstrap/dist/js/bootstrap.js',
+            paths.bower_components + 'bootstrap/dist/js/bootstrap.js'
         ], 'public/js/app.js', './')
 
         .scripts([
-            paths.bower_components + "metisMenu/dist/metisMenu.js",
-            paths.bower_components + "raphael/raphael.js",
-            paths.bower_components + "morrisjs/morris.js",
-            paths.bower_components + "startbootstrap-sb-admin-2/dist/js/sb-admin-2.js",
-            paths.bower_components + "bootstrap-table/dist/bootstrap-table.js"
+            paths.bower_components  + 'bootstrap-tagsinput/dist/bootstrap-tagsinput.js'
         ], 'public/js/admin.js', './')
+
+        .scripts("resources/assets/scripts/*", 'public/js/script.js', './')
 
 
         .version([
             'public/css/app.css',
             'public/css/bootstrap-table.css',
+            'public/css/normalize.css',
             'public/js/app.js',
             'public/js/admin.js',
-            'public/js/queryParams.js'
+            'public/js/script.js'
         ])
 });

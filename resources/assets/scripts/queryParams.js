@@ -1,4 +1,3 @@
-
 function coverFormatter(value) {
     return '<img src="' + value + '" alt="image" class="table__image">';
 }
@@ -25,4 +24,3 @@ function queryParams() {
         page: 1
     };
 }
-//# sourceMappingURL=script.js.map

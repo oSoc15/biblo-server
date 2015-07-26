@@ -1,7 +1,13 @@
 {
-  "css/app.css": "css/app-eb99c26c.css",
-  "css/bootstrap-table.css": "css/bootstrap-table-2e5c92a4.css",
+  "css/app.css": "css/app-562cf0be.css",
+  "css/bootstrap-table.css": "css/bootstrap-table-0b923759.css",
+  "css/normalize.css": "css/normalize-1e9c0f3b.css",
   "js/app.js": "js/app-4dce330f.js",
+<<<<<<< HEAD
   "js/admin.js": "js/admin-1f4b4e5e.js",
   "js/script.js": "js/script-07da9ffd.js"
+=======
+  "js/admin.js": "js/admin-48b0d7fd.js",
+  "js/script.js": "js/script-03e430e2.js"
+>>>>>>> admin
 }

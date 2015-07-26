@@ -1,2 +1,70 @@
+* {
+  box-sizing: border-box; }
+
+.btn-add {
+  color: #fff;
+  background-color: #136DA5;
+  transition: 0.5s ease-in;
+  margin-top: 20px; }
+  .btn-add a {
+    color: #fff;
+    text-decoration: none; }
+
+.btn-add:hover {
+  background-color: white;
+  border: 1px solid #136DA5;
+  color: #136DA5; }
+  .btn-add:hover a {
+    text-decoration: none;
+    color: #136DA5; }
+
+#sidebar {
+  background-color: #eaeaea;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 0; }
+  #sidebar .sidebar-greeting {
+    padding: 15px 0 15px 0;
+    text-align: center; }
+
+.submenu {
+  list-style: none;
+  text-align: right;
+  padding: 7px 5px 7px 0; }
+
+#page-wrapper {
+  margin-top: 30px; }
+
+#illustrations table {
+  margin-top: 20px;
+  border: 1px solid #000; }
+  #illustrations table thead tr th {
+    text-align: center;
+    width: 250px;
+    padding: 10px; }
+  #illustrations table tbody tr th {
+    text-align: center;
+    width: 250px;
+    padding: 10px; }
+    #illustrations table tbody tr th .overview-resize {
+      max-width: 50px;
+      width: 50px;
+      height: 50px;
+      max-height: 50px; }
+
+#edit {
+  text-align: center; }
+  #edit input {
+    margin: 0 auto; }
+  #edit .edit-resize {
+    width: 100px;
+    max-width: 100px;
+    height: 100px;
+    max-height: 100px; }
+  #edit .btn-add {
+    display: block;
+    margin-top: 20px; }
 
 /*# sourceMappingURL=app.css.map */
