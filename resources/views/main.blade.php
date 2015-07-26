@@ -17,7 +17,7 @@
                 <div class="navbar-default" role="navigation">
                     <div class="sidebar-nav">
                         <ul class="nav in" id="side-menu">
-                            <li class="text-center sidebar-greeting">Hallo, {{ Auth::user()->name }}</li>
+                            <li class="text-center sidebar-greeting">Hallo, </li>
                             <li>
                                 <a href="{{url('/admin/dashboard')}}" class=""><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
                             </li>
