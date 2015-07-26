@@ -54,17 +54,21 @@
       height: 50px;
       max-height: 50px; }
 
-#edit {
+#create {
   text-align: center; }
-  #edit input {
+  #create input {
     margin: 0 auto; }
-  #edit .edit-resize {
+  #create .edit-resize {
     width: 100px;
     max-width: 100px;
     height: 100px;
     max-height: 100px; }
-  #edit .btn-add {
+  #create .btn-add {
     display: block;
     margin-top: 20px; }
+  #create .back {
+    background-color: #136DA5;
+    padding: 0 10px 10px 10px;
+    border-radius: 50px; }
 
 /*# sourceMappingURL=app.css.map */

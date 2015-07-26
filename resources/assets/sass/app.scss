@@ -112,7 +112,7 @@ body{
     }
 }
 
-#edit {
+#create {
     text-align:center;
 
     input {
@@ -131,8 +131,15 @@ body{
         margin-top:20px;
     }
 
-    input[type=file] {
+    input[type=file]::-webkit-file-upload-button {
+        
 
+    }
+
+    .back {
+        background-color:$blue;
+        padding:0 10px 10px 10px;
+        border-radius:50px;
     }
 
 }
