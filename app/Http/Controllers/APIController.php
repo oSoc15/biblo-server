@@ -11,148 +11,139 @@ use App\Illustration;
 
 class APIController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     */
-    public function index()
-    {
-      //$age = $_GET['age'];
-      //$level = $_GET['level'];
 
-      $format = "boek";
-      $age = "ageYouth";
+  /**
+  * Get recommendations.
+  * @
+  * @return Recommended books
+  */
+  public function recommendations()
+  {
+    //Settings
+    $server = "obgent";
+    //$server = $_GET['server'];
+    $branch = "all";
+    //$branch = $_GET['branch'];
+    $age = 3;
+    //$age = $_GET['age'];
+    $likes = "";
+    //$illustrations = $_GET['liked'];
+    $dislikes = "";
+    //$illustrations = $_GET['disliked'];
+    $this->storeLikesDislikes($likes, $dislikes);
 
-      $url = urlencode("http://obgent.staging.aquabrowser.be//api/v0/search/?q=age:" . $age . " AND format:" . $format . "&authorization=26f9ce7cdcbe09df6f0b37d79b6c4dc2");
+    $tagsString = "";
+    $tags = $this->getTagsForIllustrations();
+    $tagsString = $tagsString . array_pop($tags);
+    foreach($tags as $tag){
+      $tagsString = $tagsString . " OR " . $tag;
+    }
 
-      $xml = simplexml_load_file($url); //retrieve URL and parse XML content
+    //Settings for BIBnet API URL
+    $format = "book";
+    $language = "nederlands";
 
-      //convert the xml to json
-      $json = json_encode($xml);
+    //Select language
+    switch ($age) {
+      case 1:
+      $age = '(doelgroep:"vanaf 3 jaar" OR doelgroep:"vanaf 4 jaar" OR doelgroep:"vanaf 5 jaar" OR doelgroep:"vanaf 6 jaar" OR doelgroep:"vanaf 7 jaar" OR doelgroep:"informatief -6 jaar" OR doelgroep:"informatief  6 jaar" OR doelgroep:"informatief -8 jaar")';
+      break;
+      case 2:
+      $age = '(doelgroep:"vanaf 8 jaar" OR doelgroep:"vanaf 9 jaar" OR doelgroep:"vanaf 10-11 jaar" OR doelgroep:"informatief +8 jaar”)';
+      break;
+      case 3:
+      $age = '(doelgroep:"vanaf 12-13 jaar" OR doelgroep:"vanaf 14 jaar" OR doelgroep:"informatief +12 jaar”)';
+      break;
+      default:
+      return 'Invalid age.';
+      break;
+    }
 
-      return $json;
 
-      //convert the json to an array
-      $results = json_decode($json,TRUE);
+    //Build BIBnet API URL
+    $url = "http://" . $server . ".staging.aquabrowser.be//api/v0/search/?q=" . $tagsString . " AND (language:" . $language . " AND format:" . $format . " AND " . $age . ")&authorization=26f9ce7cdcbe09df6f0b37d79b6c4dc2";
 
-      //will hold the final books
-      $output = [];
+    $xml = simplexml_load_file(urlencode($url)); //retrieve URL and parse XML content
+    $json = json_encode($xml);
 
-      for ($x = 0; $x <= sizeof($results['results']['result'])-1; $x++) {
-        //random index
-        $result = $results['results']['result'][$x];
+    //convert the json to an array
+    $temp = json_decode($json,TRUE);
+    $results = $temp['results']['result'];
+    //will hold the final books
+    $output = [];
+    for ($x = 0; $x <= sizeof($results)-1; $x++) {
+      //random index
+      $result = $results[$x];
 
-        //set array
-        $temp = [
-          "coverimage" => $result['coverimage']['url'],
-          "title" => $result['titles']['short-title']
-        ];
+      //set array
+      $temp = [
+        "coverimage" => $result['coverimage']['url'] . "&coversize=large",
+        "title" => $result['titles']['short-title']
+      ];
 
-        //check if author is set
-        if(array_key_exists('authors', $result) && array_key_exists('main-author', $result['authors'])){
-          $temp["author"] = $result['authors']['main-author'];
+      //check if author is set
+      if(array_key_exists('authors', $result)){
+        $temp["author"] = $result['authors']['main-author'];
+      }
+      else{
+        $temp["author"] = "Geen auteur te vinden.";
+      }
+
+      //check if summary is set
+      if(array_key_exists('summaries', $result)){
+        if(is_array($result['summaries']['summary'])){
+          $temp["description"] = $result['summaries']['summary'][0];
         }
-        else{
-          $temp["author"] = "Geen auteur te vinden.";
-        }
-
-        //check if summary is set
-        if(array_key_exists('summaries', $result)){
+        else {
           $temp["description"] = $result['summaries']['summary'];
         }
-        else{
-          $temp["description"] = "Geen beschrijving te vinden.";
-        }
+      }
+      else{
+        $temp["description"] = "Geen beschrijving te vinden.";
+      }
 
+      if(array_key_exists('genres', $result)){
         //check if genres is set
-        if(array_key_exists('genres', $result) && is_array($result['genres']['genre'])){
+        if(is_array($result['genres']['genre'])){
           $temp["genres"] = implode(", ",array_unique($result['genres']['genre']));
         }else{
-          if(array_key_exists('genres', $result)){
-            $temp["genres"] = $result['genres']['genre'];
-          }
-          else{
-
-          }
+          $temp["genres"] = $result['genres']['genre'];
         }
-
-        array_push($output, $temp);
       }
-      //encode the array to json and return it
-      return json_encode($output);
+      else{
+        $temp["genres"] = "Geen genres te vinden.";
+      }
+
+
+      array_push($output, $temp);
+    }
+    //encode the array to json and return it
+    return json_encode($output);
+  }
+
+  /**
+  * Get recommendations.
+  * @
+  * @return Recommended books
+  */
+  public function illustrations()
+  {
+    //Base URL where the illustrations can be found
+    $base_path = "";
+
+    $illustrations = Illustration::all(['id']);
+
+    foreach ($illustrations as $index => $illustration) {
+      $illustration["url"] = $base_path . $illustration['id'] . ".png";
     }
 
-    /**
-     * Get recommendations.
-     * @
-     * @return Recommended books
-     */
-    public function recommendations()
-    {
-      //$server, $branch, $age, $illustrations
-      //Temp Settings for input
-      $server = "obgent";
-      //$server = $_GET['server'];
-      $branch = "all";
-      //$branch = $_GET['branch'];
-      $age = 3;
-      //$age = $_GET['age'];
-      $illustrations = "";
-      //$illustrations = $_GET['illustrations'];
+    return $illustrations;
+  }
 
-      //Settings for BIBnet API URL
-      $format = "book";
-      $language = "nederlands";
+  public function storeLikesDislikes($likes, $dislikes){
+  }
 
-      switch ($age) {
-        case 1:
-          $age = '(doelgroep:"vanaf 3 jaar" OR doelgroep:"vanaf 4 jaar" OR doelgroep:"vanaf 5 jaar" OR doelgroep:"vanaf 6 jaar" OR doelgroep:"vanaf 7 jaar" OR doelgroep:"informatief -6 jaar" OR doelgroep:"informatief  6 jaar" OR doelgroep:"informatief -8 jaar")';
-        break;
-        case 2:
-          $age = '(doelgroep:"vanaf 8 jaar" OR doelgroep:"vanaf 9 jaar" OR doelgroep:"vanaf 10-11 jaar" OR doelgroep:"informatief +8 jaar”)';
-        break;
-        case 3:
-          $age = '(doelgroep:"vanaf 12-13 jaar" OR doelgroep:"vanaf 14 jaar" OR doelgroep:"informatief +12 jaar”)';
-        break;
-        default:
-          return 'Invalid age.';
-        break;
-      }
-
-      //Build BIBnet API URL
-      $url = "http://" . $server . ".staging.aquabrowser.be//api/v0/search/?q=language:" . $language . " AND format:" . $format . " AND " . $age . "&authorization=26f9ce7cdcbe09df6f0b37d79b6c4dc2";
-
-      $tags = self::getTagsForIllustrations($illustrations);
-
-      //Add tags to URL
-      foreach ($tags as $tag) {
-        //$url = $url . " OR " . $tag;
-      }
-
-      $xml = simplexml_load_file(urlencode($url)); //retrieve URL and parse XML content
-      $json = json_encode($xml);
-      return $json;
-
-      //Encode BIBnet API URL
-      return urlencode($url);
-    }
-
-    /**
-     * Get recommendations.
-     * @
-     * @return Recommended books
-     */
-    public function illustrations()
-    {
-      //Base URL where the illustrations can be found
-      $base_path = "";
-
-      $illustrations = Illustration::all(['id']);
-
-          foreach ($illustrations as $index => $illustration) {
-        $illustration["url"] = $base_path . $illustration['id'] . ".png";
-      }
-
-      return $illustrations;
-    }
+  public function getTagsForIllustrations(){
+    return ["tovenaar", "paard", "dansen"];
+  }
 }
