@@ -19,7 +19,7 @@
                         <ul class="nav in" id="side-menu">
                             <li class="sidebar-greeting">
                                 <img src="http://www.placehold.it/50x50" alt="placeholder" style="padding-bottom:15px;"/><br>
-                                Hallo, admin{{-- {{ Auth::user()->name }}--}}
+                                Hallo, {{ Auth::user()->name }}
                             </li>
                             <li>
                                 <a href="{{url('/admin/dashboard')}}" class=""><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
