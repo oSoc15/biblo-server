@@ -15,6 +15,11 @@ body{
 
 }
 
+
+h1 {
+    color:$blue;
+}
+
 .btn-add {
     color:$white;
     background-color:$blue;
@@ -50,12 +55,34 @@ body{
     left:0;
     padding:0;
 
-    .sidebar-greeting{
+    li {
+        color:$blue;
+
+        :hover {
+            background-color: $blue;
+            color:$white;
+            transition:1s ease;
+        }
+
+        a {
+            color:$blue;
+        }
+    }
+
+
+
+    .sidebar-greeting {
         padding:15px 0 15px 0;
         //color:$white;
         //background-color:$blue;
         text-align: center;
     }
+
+    .sidebar-greeting img {
+        padding-bottom:15px;
+    }
+
+
 
 }
 
@@ -130,16 +157,4 @@ body{
         display:block;
         margin-top:20px;
     }
-
-    input[type=file]::-webkit-file-upload-button {
-        
-
-    }
-
-    .back {
-        background-color:$blue;
-        padding:0 10px 10px 10px;
-        border-radius:50px;
-    }
-
 }
