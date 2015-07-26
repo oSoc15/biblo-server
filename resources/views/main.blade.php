@@ -17,7 +17,10 @@
                 <div class="navbar-default" role="navigation">
                     <div class="sidebar-nav">
                         <ul class="nav in" id="side-menu">
-                            <li class="text-center sidebar-greeting">Hallo, {{ Auth::user()->name }}</li>
+                            <li class="sidebar-greeting">
+                                <img src="http://www.placehold.it/50x50" alt="placeholder" style="padding-bottom:15px;"/><br>
+                                Hallo, admin{{-- {{ Auth::user()->name }}--}}
+                            </li>
                             <li>
                                 <a href="{{url('/admin/dashboard')}}" class=""><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
                             </li>
@@ -28,7 +31,7 @@
                                 <a href="{{url('/admin/analytics')}}"><i class="fa fa-bar-chart-o fa-fw"></i> Charts</a>
                             </li>
                             <li>
-                                <a href="{{ url('/auth/logout') }}">Afmelden</a>
+                                <a href="{{ url('/auth/logout') }}">Logout</a>
                             </li>
                         </ul>
                     </div>

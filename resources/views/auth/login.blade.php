@@ -1,12 +1,15 @@
 @extends('app')
 
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid" id="app">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading">Login</div>
+				<div class="panel-heading text-center">
+                   <img src="http://placehold.it/50x50" alt="placeholder" class=""/>
+                </div>
 				<div class="panel-body">
+
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
 							<strong>Whoops!</strong> There were some problems with your input.<br><br>

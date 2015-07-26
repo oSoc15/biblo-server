@@ -1,8 +1,8 @@
-@extends('......main')
+@extends('main')
 
 
 @section('content')
-
+<div id="edit">
 <div class="col-lg-6 col-lg-push-4">
 
     <div class="row">
@@ -19,10 +19,10 @@
 
 <div class="form-group">
     {!! Form::label('Afbeelding') !!}
-    {!! Form::file('image', array('accept'=>'image/png')) !!}
+    {!! Form::file('image', array('accept'=>'image/png', 'class'=>'')) !!}
 </div>
 @if(isset($illustration))
-    <img src="/images/{{$illustration->id}}.png" style="display:block;" />
+    <img src="/images/{{$illustration->id}}.png" class="edit-resize"/>
 @endif
 
 
@@ -30,7 +30,7 @@
     {{--{!! Form::label('Kies een afbeelding: ') !!}--}}
 {{--</div>--}}
 
-    {!! Form::submit(Route::currentRouteName() == 'illustrations.create' ? 'Voeg toe' : 'Opslaan', ['class' => 'btn btn-success']) !!}
+    {!! Form::submit(Route::currentRouteName() == 'illustrations.create' ? 'Voeg toe' : 'Opslaan', ['class' => 'btn btn-add']) !!}
 
     {!! Form::close() !!}
 </div>
@@ -62,5 +62,5 @@
                 </form>
             </div>
  -->
-
+</div>
 @stop

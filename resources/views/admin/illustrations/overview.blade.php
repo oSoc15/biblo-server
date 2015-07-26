@@ -9,7 +9,7 @@
                 <h1>Illustraties<!--has to be dynamic based on the a href--></h1>
             </div>
             <div class="col-lg-6 text-right">
-                <div class="btn btn-success btn-add">
+                <div class="btn btn-add">
                     <a href="{{route('illustrations.create')}}">Voeg afbeelding toe </a>
                 </div>
             </div>
@@ -33,9 +33,10 @@
                     <tbody>
                         @foreach ($illustrations as $illustration)
                             <tr>
-                                <th><img src="/images/{{$illustration->id}}.png" alt="plaatje"/></th>
+                                <th><img src="/images/{{$illustration->id}}.png" alt="plaatje" class="overview-resize"/></th>
                                 <th>{{$illustration->name}}</th>
                                 <th><a href="{{ route('illustrations.edit', array($illustration->id)) }}">Wijzigen</a> | <a href="{{route('illustrations.remove', array($illustration->id))}}">Verwijderen</a></th>
+                                {{--<th>{{$illustration->tags}}</th>--}}
                             </tr>
                         @endforeach
 
@@ -47,6 +48,5 @@
 </div>
     </div> <!-- /.row (in main.blade.php) don't remove! -->
 </div><!-- /.container-fluid (in main.blade.php) don't remove!-->
-</body>
-</html>
+
 @stop
