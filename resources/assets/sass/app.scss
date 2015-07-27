@@ -157,7 +157,7 @@ h1 {
     .btn-add {
         border-radius:0;
         display:block;
-        margin-top:20px;
+        margin-top:50px;
     }
 
 
@@ -171,7 +171,7 @@ h1 {
         padding:5px;
         width:300px;
         background-color: $blue;
-        margin-top:20px;
+        margin-top:10px;
         color:$white;
         transition:1s ease-in;
     }
@@ -199,6 +199,14 @@ h1 {
         li {
             text-align:left;
         }
+    }
+
+    .box {
+        height:250px;
+        background-color: $blue;
+        color:$white;
+        margin-bottom:10px;
+
     }
 }
 

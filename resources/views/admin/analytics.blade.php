@@ -15,7 +15,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-<div id="columnchart_material" style="width: 900px; height: 500px;"></div>
+<div id="columnchart_material" style="width: 700px; height: 500px;"></div>
                 </div>
             </div>
         </div>

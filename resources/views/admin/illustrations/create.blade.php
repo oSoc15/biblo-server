@@ -14,7 +14,7 @@
     </div>
 
 {!! Form::model($illustration, array('files' => true)) !!}
-<div class="form-group">
+<div class="form-group ">
     {!! Form::label('Naam') !!}<br>
     {!! Form::text ('name') !!}
 </div>

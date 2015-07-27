@@ -27,7 +27,7 @@ class AdminController extends Controller
 
     public function illustrations() {
         $illustrations = Illustration::all();
-        
+
         return view ("admin.illustrations.overview", compact('illustrations', 'tags'));
     }
 

@@ -21,7 +21,7 @@
                         <ul class="nav in" id="side-menu">
                             <li class="sidebar-greeting">
                                 <img src="http://www.placehold.it/50x50" alt="placeholder"/><br>
-                                {{--Hallo, {{ Auth::user()->name }}--}}
+                                Hallo, {{ Auth::user()->name }}
                             </li>
                             {{--<li>--}}
                                 {{--<a href="{{url('/admin/dashboard')}}" class=""><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>--}}
@@ -30,10 +30,10 @@
                                 <a href="{{url('/admin/illustrations')}}" class=""><i class="fa fa-image fa-fw"></i> Illustraties</a>
                             </li>
                             <li>
-                                <a href="{{url('/admin/analytics')}}"><i class="fa fa-bar-chart-o fa-fw"></i>Statistiek</a>
+                                <a href="{{url('/admin/analytics')}}"><i class="fa fa-bar-chart-o fa-fw"></i> Statistiek</a>
                             </li>
                             <li>
-                                <a href="{{url('/admin/illustrations/tags-list')}}">Tags</a>
+                                <a href="{{url('/admin/illustrations/tags-list')}}"><i class="fa fa-tags fa-fw"></i> Tags</a>
                             </li>
                             <li>
                                 <a href="{{ url('/auth/logout') }}">Uitloggen</a>

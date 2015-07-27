@@ -80,7 +80,7 @@ h1 {
   #create .btn-add {
     border-radius: 0;
     display: block;
-    margin-top: 20px; }
+    margin-top: 50px; }
   #create .tags {
     width: 300px; }
   #create .icon-back {
@@ -89,7 +89,7 @@ h1 {
     padding: 5px;
     width: 300px;
     background-color: #136DA5;
-    margin-top: 20px;
+    margin-top: 10px;
     color: #fff;
     transition: 1s ease-in; }
   #create .icon-back:hover {
@@ -105,5 +105,11 @@ h1 {
   list-style-type: none; }
   #home ul li {
     text-align: left; }
+
+#home .box {
+  height: 250px;
+  background-color: #136DA5;
+  color: #fff;
+  margin-bottom: 10px; }
 
 /*# sourceMappingURL=app.css.map */
