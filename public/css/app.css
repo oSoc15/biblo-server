@@ -79,7 +79,13 @@ h1 {
   #create .btn-add {
     display: block;
     margin-top: 20px; }
-  #create .input-image {
-    white-space: pre-line; }
+
+#home h {
+  color: #136DA5; }
+
+#home ul {
+  list-style-type: none; }
+  #home ul li {
+    text-align: left; }
 
 /*# sourceMappingURL=app.css.map */

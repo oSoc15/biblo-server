@@ -28,7 +28,7 @@ class AdminController extends Controller
     public function illustrations() {
         $illustrations = Illustration::all();
 
-        return view ("admin.illustrations.overview", compact('illustrations'));
+        return view ("admin.illustrations.overview", compact('illustrations', 'tags'));
     }
 
     public function analytics() {
@@ -36,12 +36,13 @@ class AdminController extends Controller
     }
 
     public function createIllustration() {
-        return view ("admin.illustrations.create")->with(array('illustration'=>null));
+        $tags = Tag::all();
+
+        return view ("admin.illustrations.create", compact('tags'))->with(array('illustration'=>null));
     }
 
     public function storeIllustration() {
         $input = Request::all(); /*  haal alles af */
-
         $illustration = new Illustration(); /* variabele die nieuwe illustratie is */
         $illustration->fill($input); /* vult variabele (die een illustratie is) met informatie die opgehaald wordt */
         $illustration->save(); /* slaat variabele op */
@@ -58,8 +59,9 @@ class AdminController extends Controller
     }
 
     public function editIllustration($id){
+        $tags = Tag::all();
         $illustration = Illustration::find($id);
-        return view("admin.illustrations.create")->with(array('illustration'=>$illustration));
+        return view("admin.illustrations.create", compact('tags'))->with(array('illustration'=>$illustration));
     }
 
     public function updateIllustration($id) {
@@ -84,14 +86,6 @@ class AdminController extends Controller
         return redirect(route('illustrations'));
     }
 
-    public function addTags(){
-        return view("admin.illustrations.add-tags");
-    }
 
-    public function createTags() {
-        $tags = Tag::all();
-
-       return view ("admin.illustrations.create-tags", compact('tags'));
-    }
 
 }

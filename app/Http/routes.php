@@ -17,11 +17,15 @@ Route::get('/', function () {
 
 Route::get('admin', 'AdminController@index');
 
+
+// Admin Routes
+// ===================
+
 Route::group(['prefix' => 'admin'], function () {
         /*Main route for admin = direct to illustrations page*/
         Route::get('/', 'AdminController@illustrations');
         /*Route to dashboard*/
-        Route::get('dashboard', 'AdminController@dashboard');
+        /*Route::get('dashboard', 'AdminController@dashboard');*/
         /*Route to illustrations page */
         Route::get("illustrations",             ['as' => 'illustrations',           'uses' => 'AdminController@illustrations']);
         /*Routes get/post for creating an illustration*/
@@ -35,13 +39,9 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::get('analytics', "AdminController@analytics");
 
-        Route::get('sample-data', 'AdminController@sampleData');
-
-        Route::get('illustrations/add-tags',    ['as' => 'illustrations.add-tags', 'uses' => 'AdminController@addTags']);
-
-        Route::get('illustrations/create-tags', ['as' => 'illustrations.create-tags', 'uses' => 'AdminController@createTags']);
+        /* Routes for TagsController */
+        Route::get('illustrations/tags-list', ['as' => 'illustrations.tags-list', 'uses' => 'TagsController@tagsList']);
     }
-
 
 );
 
@@ -52,7 +52,8 @@ Route::controllers([
     'password' => 'Auth\PasswordController',
 ]);
 
-
+// API Routes
+// ===================
 Route::group(array('prefix' => 'API'), function () {
 
         Route::get('/', 'APIController@recommendations');

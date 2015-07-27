@@ -7,6 +7,7 @@
 
     <link href="{{elixir('css/normalize.css')}}" rel="stylesheet">
     <link href="{{elixir('css/bootstrap-table.css')}}" rel="stylesheet">
+    <link href="{{elixir('css/chosen.css')}}" rel="stylesheet">
     <link href="{{elixir('css/app.css')}}" rel="stylesheet">
 </head>
 <body>
@@ -21,20 +22,20 @@
                                 <img src="http://www.placehold.it/50x50" alt="placeholder"/><br>
                                 {{--Hallo, {{ Auth::user()->name }}--}}
                             </li>
-                            <li>
-                                <a href="{{url('/admin/dashboard')}}" class=""><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
-                            </li>
+                            {{--<li>--}}
+                                {{--<a href="{{url('/admin/dashboard')}}" class=""><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>--}}
+                            {{--</li>--}}
                             <li>
                                 <a href="{{url('/admin/illustrations')}}" class=""><i class="fa fa-image fa-fw"></i> Illustraties</a>
                             </li>
                             <li>
-                                <a href="{{url('/admin/analytics')}}"><i class="fa fa-bar-chart-o fa-fw"></i> Charts</a>
+                                <a href="{{url('/admin/analytics')}}"><i class="fa fa-bar-chart-o fa-fw"></i>Statistiek</a>
                             </li>
                             <li>
-                                <a href="{{url('/admin/illustrations/create-tags')}}">Tags</a>
+                                <a href="{{url('/admin/illustrations/tags-list')}}">Tags</a>
                             </li>
                             <li>
-                                <a href="{{ url('/auth/logout') }}">Logout</a>
+                                <a href="{{ url('/auth/logout') }}">Uitloggen</a>
                             </li>
                         </ul>
                     </div>

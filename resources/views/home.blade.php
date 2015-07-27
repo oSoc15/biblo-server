@@ -1,17 +1,27 @@
 @extends('app')
 
 @section('content')
-<div class="container">
-	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-			<div class="panel panel-default">
-				<div class="panel-heading">Home</div>
 
-				<div class="panel-body">
-					You are logged in!
-				</div>
-			</div>
-		</div>
-	</div>
+<div id="home">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Hoofdpagina</div>
+
+                    <div class="panel-body text-center">
+                        <h3>U bent succesvol ingelogd!</h3>
+                        <h4>Vanaf hier kunt u:</h4>
+                        <ul>
+                        <li><a href="{{url('/admin/illustrations')}}">Illustraties-lijst bekijken</a></li>
+                        <li><a href="{{url('/admin/illustrations/create')}}">Illustraties toevoegen</a></li>
+                        <li><a href="{{url('/admin/illustrations/tags-list')}}">Tags toevoegen</a></li>
+                        <li><a href="{{url('/admin/analytics')}}">Statistieken bekijken</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection
