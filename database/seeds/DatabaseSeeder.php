@@ -14,7 +14,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-      Model::unguard();
+        DB::statement("SET foreign_key_checks = 0");
+
+        Model::unguard();
 
         $this->call('TagTableSeeder');
         $this->call('IllustrationTableSeeder');
