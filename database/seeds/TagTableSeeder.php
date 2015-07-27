@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+
+use App\Tag as Tag;
 
 class TagTableSeeder extends Seeder
 {
