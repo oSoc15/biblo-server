@@ -70,17 +70,25 @@ h1 {
 #create {
   text-align: center; }
   #create input {
-    margin: 0 auto; }
+    margin: 0 auto;
+    width: 300px; }
   #create .edit-resize {
     width: 100px;
     max-width: 100px;
     height: 100px;
     max-height: 100px; }
   #create .btn-add {
+    border-radius: 0;
     display: block;
     margin-top: 20px; }
-  #create .back {
-    background-color: #136DA5; }
+  #create .tags {
+    width: 300px; }
+  #create .icon-back {
+    width: 300px;
+    padding: 10px 15px 10px 10px;
+    background-color: #eaeaea;
+    margin-top: 20px;
+    color: #136DA5; }
 
 #home h3 {
   color: #136DA5; }

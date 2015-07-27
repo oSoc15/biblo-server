@@ -144,6 +144,7 @@ h1 {
 
     input {
         margin:0 auto;
+        width:300px;
     }
 
     .edit-resize {
@@ -154,12 +155,23 @@ h1 {
     }
 
     .btn-add {
+        border-radius:0;
         display:block;
         margin-top:20px;
     }
 
-    .back{
-        background-color: $blue;
+
+    .tags {
+        width:300px;
+    }
+
+    .icon-back{
+        
+        width:300px;
+        padding:10px 15px 10px 10px;
+        background-color: $grey;
+        margin-top:20px;
+        color:$blue;
     }
 
 }
