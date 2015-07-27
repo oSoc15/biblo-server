@@ -149,7 +149,7 @@ class APIController extends Controller
   public function illustrations()
   {
     //Base URL where the illustrations can be found
-    $base_path = "";
+    $base_path = "http://api.bieblo.be/images/";
 
     $illustrations = Illustration::all(['id']);
 

@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::statement("SET foreign_key_checks = 0");
+        DB::table('illustration_tag')->delete();
 
         Model::unguard();
 
