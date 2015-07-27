@@ -21,7 +21,7 @@
 <div class="form-group">
     {!! Form::label('tags') !!}<br>
 
-    <select style="width:350px;" multiple data-placeholder="test" name="tags" class="chosen-select" >
+    <select style="width:350px;" multiple data-placeholder="Voeg 5 tags toe aan de afbeelding" name="tags" class="chosen-select" >
         @foreach ($tags as $tag)
             <option value="{{$tag->name}}">{{$tag->name}}</option>
         @endforeach

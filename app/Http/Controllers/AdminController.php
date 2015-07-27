@@ -26,7 +26,6 @@ class AdminController extends Controller
     }
 
     public function illustrations() {
-        $tags  = Tag::all();
         $illustrations = Illustration::all();
 
         return view ("admin.illustrations.overview", compact('illustrations', 'tags'));
@@ -44,8 +43,6 @@ class AdminController extends Controller
 
     public function storeIllustration() {
         $input = Request::all(); /*  haal alles af */
-        dd($input);
-
         $illustration = new Illustration(); /* variabele die nieuwe illustratie is */
         $illustration->fill($input); /* vult variabele (die een illustratie is) met informatie die opgehaald wordt */
         $illustration->save(); /* slaat variabele op */
@@ -89,9 +86,6 @@ class AdminController extends Controller
         return redirect(route('illustrations'));
     }
 
-    public function addTags(){
-        return view("admin.illustrations.add-tags");
-    }
 
     public function createTags() {
         $tags = Tag::all();
