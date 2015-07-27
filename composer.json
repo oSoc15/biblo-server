@@ -7,7 +7,6 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "bestmomo/scafold": "dev-master",
         "laravelcollective/html": "5.1.*",
         "bican/roles": "2.1.*"
 

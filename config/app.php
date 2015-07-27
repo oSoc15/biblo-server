@@ -143,7 +143,6 @@ return [
         App\Providers\AppServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Bestmomo\Scafold\ScafoldServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Bican\Roles\RolesServiceProvider::class
 
