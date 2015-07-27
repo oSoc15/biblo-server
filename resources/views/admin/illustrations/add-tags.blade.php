@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div id="illustrations">
+<div id="add-tags">
     <div id="page-wrapper" class="col-lg-5 col-lg-push-4">
         <div class="row">
             <div class="col-lg-12">
@@ -16,6 +16,8 @@
 
         <div class="row">
             <div class="col-lg-12">
+
+
 
             </div>
         </div>

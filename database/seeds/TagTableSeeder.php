@@ -1,5 +1,6 @@
 <?php
 
+use App\Tag;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 

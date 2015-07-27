@@ -7,13 +7,14 @@ use Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
+use App\Tag;
 
 class AdminController extends Controller
 {
-  public function __construct()
+  /*public function __construct()
     {
         $this->middleware('auth');
-    }
+    }*/
 
 
     public function index() {
@@ -88,7 +89,9 @@ class AdminController extends Controller
     }
 
     public function createTags() {
-       return view ("admin.illustrations.create-tags");
+        $tags = Tag::all();
+
+       return view ("admin.illustrations.create-tags", compact('tags'));
     }
 
 }
