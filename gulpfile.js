@@ -18,7 +18,8 @@ var paths = {
     'bower_components': './vendor/bower_components/',
     'jquery':           './vendor/bower_components/jquery/',
     'bootstrapTable':   './vendor/bower_components/bootstrap-table/dist/',
-    'fontawesome':      './vendor/bower_components/fontawesome/'
+    'fontawesome':      './vendor/bower_components/fontawesome/',
+    'baseScripts':      './resources/assets/scripts/'
 };
 
 
@@ -43,7 +44,8 @@ elixir(function(mix) {
         ], 'public/js/app.js', './')
 
         .scripts([
-            paths.bower_components  + 'chosen/chosen.jquery.min.js'
+            paths.bower_components  + 'chosen/chosen.jquery.min.js',
+
         ], 'public/js/admin.js', './')
 
         .scripts("resources/assets/scripts/*", 'public/js/script.js', './')

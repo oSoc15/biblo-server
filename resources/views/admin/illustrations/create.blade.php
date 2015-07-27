@@ -19,13 +19,25 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('tags') !!}<br>
+
+    <select style="width:350px;" multiple data-placeholder="test" name="tags" class="chosen-select" >
+        @foreach ($tags as $tag)
+            <option value="{{$tag->name}}">{{$tag->name}}</option>
+        @endforeach
+    </select>
+
+</div>
+
+<div class="form-group">
     {!! Form::label('Afbeelding') !!}
-    {!! Form::file('image', array('accept'=>'image/png', 'class'=>'input-image
-    ')) !!}
+    {!! Form::file('image', array('accept'=>'image/png', 'class'=>'input-image')) !!}
 </div>
 @if(isset($illustration))
     <img src="/images/{{$illustration->id}}.png" class="edit-resize"/>
 @endif
+
+
 
     {!! Form::submit(Route::currentRouteName() == 'illustrations.create' ? 'Voeg toe' : 'Opslaan', ['class' => 'btn btn-add']) !!}
 

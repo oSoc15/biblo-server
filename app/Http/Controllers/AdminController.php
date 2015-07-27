@@ -36,11 +36,14 @@ class AdminController extends Controller
     }
 
     public function createIllustration() {
-        return view ("admin.illustrations.create")->with(array('illustration'=>null));
+        $tags = Tag::all();
+
+        return view ("admin.illustrations.create", compact('tags'))->with(array('illustration'=>null));
     }
 
     public function storeIllustration() {
         $input = Request::all(); /*  haal alles af */
+        dd($input);
 
         $illustration = new Illustration(); /* variabele die nieuwe illustratie is */
         $illustration->fill($input); /* vult variabele (die een illustratie is) met informatie die opgehaald wordt */
