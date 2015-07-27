@@ -21,6 +21,9 @@ h1 {
     text-decoration: none;
     color: #136DA5; }
 
+#create, #tags, #analytics, #illustrations {
+  margin-top: 30px; }
+
 #sidebar {
   background-color: #eaeaea;
   position: fixed;
@@ -46,9 +49,6 @@ h1 {
   list-style: none;
   text-align: right;
   padding: 7px 5px 7px 0; }
-
-#page-wrapper {
-  margin-top: 30px; }
 
 #illustrations table {
   margin-top: 20px;
@@ -80,15 +80,23 @@ h1 {
   #create .btn-add {
     border-radius: 0;
     display: block;
-    margin-top: 20px; }
+    margin-top: 50px; }
   #create .tags {
     width: 300px; }
   #create .icon-back {
+    height: 34px;
+    font-size: 24px;
+    padding: 5px;
     width: 300px;
-    padding: 10px 15px 10px 10px;
-    background-color: #eaeaea;
-    margin-top: 20px;
-    color: #136DA5; }
+    background-color: #136DA5;
+    margin-top: 10px;
+    color: #fff;
+    transition: 1s ease-in; }
+  #create .icon-back:hover {
+    color: #136DA5;
+    background-color: #fff;
+    border: 1px solid #136DA5;
+    transition: 0.5s ease-in; }
 
 #home h3 {
   color: #136DA5; }
@@ -97,5 +105,11 @@ h1 {
   list-style-type: none; }
   #home ul li {
     text-align: left; }
+
+#home .box {
+  height: 250px;
+  background-color: #136DA5;
+  color: #fff;
+  margin-bottom: 10px; }
 
 /*# sourceMappingURL=app.css.map */

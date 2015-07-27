@@ -2,9 +2,10 @@
 
 
 @section('content')
-        <div id="page-wrapper" class="col-lg-6 col-lg-push-3">
+<div id="analytics">
+  <div class="col-lg-6 col-lg-push-4">
             <div class="row">
-                <div class="col-lg-12 text-center">
+                <div class="col-lg-12">
                     <h1>Grafieken<!--has to be dynamic based on the a href--></h1>
                 </div>
             </div>
@@ -14,13 +15,16 @@
 
             <div class="row">
                 <div class="col-lg-12">
-<div id="columnchart_material" style="width: 900px; height: 500px;"></div>
+<div id="columnchart_material" style="width: 700px; height: 500px;"></div>
                 </div>
             </div>
         </div>
 
     </div> <!-- /.row (in main.blade.php) don't remove! -->
 </div><!-- /.container-fluid (in main.blade.php) don't remove!-->
+
+</div>
+
 
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">

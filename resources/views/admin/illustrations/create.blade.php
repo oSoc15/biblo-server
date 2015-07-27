@@ -14,7 +14,7 @@
     </div>
 
 {!! Form::model($illustration, array('files' => true)) !!}
-<div class="form-group">
+<div class="form-group ">
     {!! Form::label('Naam') !!}<br>
     {!! Form::text ('name') !!}
 </div>
@@ -45,7 +45,7 @@
     {!! Form::close() !!}
 
 
-        <i class="fa fa-barcode fa-3x icon-back"></i>
+        <a href="{{url('admin/illustrations')}}"><i class="fa fa-chevron-left fa-1x icon-back"></i></a>
 
 </div>
 

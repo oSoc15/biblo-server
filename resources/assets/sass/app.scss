@@ -44,8 +44,11 @@ h1 {
     }
 }
 
-//Admin-template
+#create, #tags, #analytics, #illustrations {
+    margin-top:30px;
+}
 
+//Admin-template
 
 #sidebar {
     background-color:$grey;
@@ -82,8 +85,6 @@ h1 {
         padding-bottom:15px;
     }
 
-
-
 }
 
 .submenu {
@@ -91,10 +92,6 @@ h1 {
     text-align: right;
     padding: 7px 5px 7px 0;
 
-}
-
-#page-wrapper{
-    margin-top:30px;
 }
 
 
@@ -139,6 +136,9 @@ h1 {
     }
 }
 
+
+//Create/edit illustration page
+
 #create {
     text-align:center;
 
@@ -157,7 +157,7 @@ h1 {
     .btn-add {
         border-radius:0;
         display:block;
-        margin-top:20px;
+        margin-top:50px;
     }
 
 
@@ -165,17 +165,28 @@ h1 {
         width:300px;
     }
 
-    .icon-back{
-        
+    .icon-back {
+        height:34px;
+        font-size:24px;
+        padding:5px;
         width:300px;
-        padding:10px 15px 10px 10px;
-        background-color: $grey;
-        margin-top:20px;
+        background-color: $blue;
+        margin-top:10px;
+        color:$white;
+        transition:1s ease-in;
+    }
+
+    .icon-back:hover {
         color:$blue;
+        background-color: $white;
+        border:1px solid $blue;
+        transition:0.5s ease-in;
+
     }
 
 }
 
+//home-page
 #home {
 
     h3 {
@@ -189,5 +200,19 @@ h1 {
             text-align:left;
         }
     }
+
+    .box {
+        height:250px;
+        background-color: $blue;
+        color:$white;
+        margin-bottom:10px;
+
+    }
 }
 
+
+//tags
+
+#tags {
+
+}
