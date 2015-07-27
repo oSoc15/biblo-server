@@ -10,10 +10,10 @@ use Illuminate\Http\Response;
 
 class AdminController extends Controller
 {
-  /*public function __construct()
+  public function __construct()
     {
         $this->middleware('auth');
-    }*/
+    }
 
 
     public function index() {
@@ -84,7 +84,11 @@ class AdminController extends Controller
     }
 
     public function addTags(){
+        return view("admin.illustrations.add-tags");
+    }
 
+    public function createTags() {
+       return view ("admin.illustrations.create-tags");
     }
 
 }

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6212e334af3bae98867ddfaadc1708b7",
+    "hash": "ed40ddd551ced1a4ea1b31742b8a85c5",
     "packages": [
         {
             "name": "bestmomo/scafold",
@@ -47,6 +47,51 @@
             "description": "To add scafold to Laravel 5.1",
             "homepage": "http://github.com/bestmomo/scafold",
             "time": "2015-07-04 09:14:48"
+        },
+        {
+            "name": "bican/roles",
+            "version": "2.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/romanbican/roles.git",
+                "reference": "8958428dc02b7d1d358784575a44eda901706cab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/romanbican/roles/zipball/8958428dc02b7d1d358784575a44eda901706cab",
+                "reference": "8958428dc02b7d1d358784575a44eda901706cab",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Bican\\Roles": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Bičan",
+                    "email": "romanbican@seznam.cz"
+                }
+            ],
+            "description": "Powerful package for handling roles and permissions in Laravel 5.",
+            "keywords": [
+                "acl",
+                "auth",
+                "illuminate",
+                "laravel",
+                "permissions",
+                "roles"
+            ],
+            "time": "2015-07-01 08:22:07"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -2595,16 +2640,17 @@
         },
         {
             "name": "sebastian/comparator",
-            "version": "1.1.2",
+
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "dee3fd1828677b2182c076ad2caecbb5c7bdbf1c"
+                "reference": "937efb279bd37a375bcadf584dec0726f84dbf22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/dee3fd1828677b2182c076ad2caecbb5c7bdbf1c",
-                "reference": "dee3fd1828677b2182c076ad2caecbb5c7bdbf1c",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/937efb279bd37a375bcadf584dec0726f84dbf22",
+                "reference": "937efb279bd37a375bcadf584dec0726f84dbf22",
                 "shasum": ""
             },
             "require": {
@@ -2618,7 +2664,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-master": "1.2.x-dev"
                 }
             },
             "autoload": {

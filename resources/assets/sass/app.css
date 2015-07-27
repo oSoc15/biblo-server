@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box; }
 
+h1 {
+  color: #136DA5; }
+
 .btn-add {
   color: #fff;
   background-color: #136DA5;
@@ -25,9 +28,19 @@
   top: 0;
   left: 0;
   padding: 0; }
+  #sidebar li {
+    color: #136DA5; }
+    #sidebar li :hover {
+      background-color: #136DA5;
+      color: #fff;
+      transition: 1s ease; }
+    #sidebar li a {
+      color: #136DA5; }
   #sidebar .sidebar-greeting {
     padding: 15px 0 15px 0;
     text-align: center; }
+  #sidebar .sidebar-greeting img {
+    padding-bottom: 15px; }
 
 .submenu {
   list-style: none;
@@ -54,17 +67,19 @@
       height: 50px;
       max-height: 50px; }
 
-#edit {
+#create {
   text-align: center; }
-  #edit input {
+  #create input {
     margin: 0 auto; }
-  #edit .edit-resize {
+  #create .edit-resize {
     width: 100px;
     max-width: 100px;
     height: 100px;
     max-height: 100px; }
-  #edit .btn-add {
+  #create .btn-add {
     display: block;
     margin-top: 20px; }
+  #create .input-image {
+    white-space: pre-line; }
 
 /*# sourceMappingURL=app.css.map */

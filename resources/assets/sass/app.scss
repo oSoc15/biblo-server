@@ -15,6 +15,11 @@ body{
 
 }
 
+
+h1 {
+    color:$blue;
+}
+
 .btn-add {
     color:$white;
     background-color:$blue;
@@ -50,12 +55,34 @@ body{
     left:0;
     padding:0;
 
-    .sidebar-greeting{
+    li {
+        color:$blue;
+
+        :hover {
+            background-color: $blue;
+            color:$white;
+            transition:1s ease;
+        }
+
+        a {
+            color:$blue;
+        }
+    }
+
+
+
+    .sidebar-greeting {
         padding:15px 0 15px 0;
         //color:$white;
         //background-color:$blue;
         text-align: center;
     }
+
+    .sidebar-greeting img {
+        padding-bottom:15px;
+    }
+
+
 
 }
 
@@ -112,7 +139,7 @@ body{
     }
 }
 
-#edit {
+#create {
     text-align:center;
 
     input {
@@ -131,8 +158,12 @@ body{
         margin-top:20px;
     }
 
-    input[type=file] {
-
+    .input-image {
+        white-space: pre-line;
     }
 
+    .input-image:before {
+
+    }
 }
+
