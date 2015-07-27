@@ -18,6 +18,14 @@
                         <li><a href="{{url('/admin/illustrations/tags-list')}}">Tags toevoegen</a></li>
                         <li><a href="{{url('/admin/analytics')}}">Statistieken bekijken</a></li>
                         </ul>
+
+                        <div class="row">
+                            <div class="col-lg-6 box">Illustraties-lijst bekijken</div>
+                            <div class="col-lg-6">Illustraties toevoegen</div>
+
+                            <div class="col-lg-6">Tags toevoegen</div>
+                            <div class="col-lg-6">Statistieken bekijken</div>
+                        </div>
                     </div>
                 </div>
             </div>

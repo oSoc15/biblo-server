@@ -27,8 +27,6 @@ elixir(function(mix) {
 
     mix.copy(paths.bower_components + 'bootstrap/fonts/bootstrap/**', 'public/fonts/bootstrap')
 
-        .copy(paths.fontawesome + 'css/font-awesome.css', 'public/css/font-awesome.css')
-
         .copy(paths.bower_components + 'normalize.css/normalize.css', 'public/css/normalize.css')
 
         .copy([
@@ -60,7 +58,6 @@ elixir(function(mix) {
             'public/css/bootstrap-table.css',
             'public/css/normalize.css',
             'public/css/chosen.css',
-            'public/css/font-awesome.css',
             'public/js/app.js',
             'public/js/admin.js',
             'public/js/script.js'

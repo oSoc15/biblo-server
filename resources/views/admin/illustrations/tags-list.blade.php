@@ -2,7 +2,8 @@
 
 @section('content')
 
-<div id="create-tags">
+
+<div id="tags">
     <div id="page-wrapper" class="col-lg-5 col-lg-push-4">
         <div class="row">
             <div class="col-lg-12">

@@ -45,7 +45,7 @@
     {!! Form::close() !!}
 
 
-        <i class="fa fa-barcode fa-3x icon-back"></i>
+        <a href="{{url('admin/illustrations')}}"><i class="fa fa-chevron-left fa-1x icon-back"></i></a>
 
 </div>
 
