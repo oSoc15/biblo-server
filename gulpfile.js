@@ -32,7 +32,7 @@ elixir(function(mix) {
 
         .copy([
             paths.bower_components  + 'bootstrap/dist/css/bootstrap.css',
-            paths.bower_components  + 'bootstrap-tagsinput/dist/bootstrap-tagsinput.css'
+            paths.bower_components  + 'chosen/chosen.min.css'
         ], 'public/css/bootstrap-table.css')
 
         .sass('app.scss', 'public/css/')
@@ -43,7 +43,7 @@ elixir(function(mix) {
         ], 'public/js/app.js', './')
 
         .scripts([
-            paths.bower_components  + 'bootstrap-tagsinput/dist/bootstrap-tagsinput.js'
+            paths.bower_components  + 'chosen/chosen.jquery.min.js'
         ], 'public/js/admin.js', './')
 
         .scripts("resources/assets/scripts/*", 'public/js/script.js', './')
