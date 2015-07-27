@@ -19,7 +19,7 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('tags') !!}<br>
+    {!! Form::label('tags (max 5)') !!}<br>
 
     <select style="width:350px;" multiple data-placeholder="Voeg 5 tags toe aan de afbeelding" name="tags" class="chosen-select" >
         @foreach ($tags as $tag)

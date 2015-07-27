@@ -29,13 +29,13 @@
                                 <a href="{{url('/admin/illustrations')}}" class=""><i class="fa fa-image fa-fw"></i> Illustraties</a>
                             </li>
                             <li>
-                                <a href="{{url('/admin/analytics')}}"><i class="fa fa-bar-chart-o fa-fw"></i> Charts</a>
+                                <a href="{{url('/admin/analytics')}}"><i class="fa fa-bar-chart-o fa-fw"></i>Statistiek</a>
                             </li>
                             <li>
                                 <a href="{{url('/admin/illustrations/tags-list')}}">Tags</a>
                             </li>
                             <li>
-                                <a href="{{ url('/auth/logout') }}">Logout</a>
+                                <a href="{{ url('/auth/logout') }}">Uitloggen</a>
                             </li>
                         </ul>
                     </div>
