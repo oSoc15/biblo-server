@@ -4,10 +4,8 @@
 @section('content')
 <div id="create">
 <div class="col-lg-6 col-lg-push-4">
-
     <div class="row">
         <div class="col-lg-12">
-            <h1></h1>
             <h1>Voeg een afbeelding toe</h1>
         </div>
     </div>
