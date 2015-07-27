@@ -3,6 +3,9 @@
 
 @section('content')
 <div id="create">
+
+
+
 <div class="col-lg-6 col-lg-push-4">
     <div class="row">
         <div class="col-lg-12">
@@ -19,7 +22,7 @@
 <div class="form-group">
     {!! Form::label('tags (max 5)') !!}<br>
 
-    <select style="width:350px;" multiple data-placeholder="Voeg 5 tags toe aan de afbeelding" name="tags" class="chosen-select" >
+    <select multiple data-placeholder="Voeg 5 tags toe aan de afbeelding" name="tags" class="chosen-select tags" >
         @foreach ($tags as $tag)
             <option value="{{$tag->name}}">{{$tag->name}}</option>
         @endforeach
@@ -40,6 +43,10 @@
     {!! Form::submit(Route::currentRouteName() == 'illustrations.create' ? 'Voeg toe' : 'Opslaan', ['class' => 'btn btn-add']) !!}
 
     {!! Form::close() !!}
+
+
+        <i class="fa fa-barcode fa-3x icon-back"></i>
+
 </div>
 
 </div>
