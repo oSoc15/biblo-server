@@ -23,7 +23,7 @@ class APIController extends Controller
     //$server = $_GET['server'];
     $branch = "all";
     //$branch = $_GET['branch'];
-    $age = 3;
+    $age = 2;
     //$age = $_GET['age'];
 
 
@@ -152,11 +152,9 @@ class APIController extends Controller
     $base_path = "http://api.bieblo.be/images/";
 
     $illustrations = Illustration::all(['id']);
-
     foreach ($illustrations as $index => $illustration) {
       $illustration["url"] = $base_path . $illustration['id'] . ".png";
     }
-
     return $illustrations;
   }
 
