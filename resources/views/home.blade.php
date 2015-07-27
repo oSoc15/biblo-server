@@ -15,7 +15,7 @@
                         <ul>
                         <li><a href="{{url('/admin/illustrations')}}">Illustraties-lijst bekijken</a></li>
                         <li><a href="{{url('/admin/illustrations/create')}}">Illustraties toevoegen</a></li>
-                        <li><a href="{{url('/admin/illustrations/tags-list')}}">Tags toevoegen</a></li>
+                        <li><a href="{{url('/admin/tags/overview')}}">Tags toevoegen</a></li>
                         <li><a href="{{url('/admin/analytics')}}">Statistieken bekijken</a></li>
                         </ul>
 

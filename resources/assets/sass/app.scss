@@ -206,7 +206,6 @@ h1 {
         background-color: $blue;
         color:$white;
         margin-bottom:10px;
-
     }
 }
 
@@ -214,5 +213,20 @@ h1 {
 //tags
 
 #tags {
+    .taglist {
+        margin-top:20px;
+        .taglist-tag {
+            margin-bottom:10px;
+            padding:10px;
+            border:2px solid $blue;
+            color:$blue;
+            background-color: $white;
+            text-align: center;
+        }
+    }
+
+    .btn-add {
+        margin-top:0;
+    }
 
 }

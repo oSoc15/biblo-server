@@ -46,7 +46,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('analytics', "AdminController@analytics");
 
         /* Routes for TagsController */
-        Route::get('illustrations/tags-list', ['as' => 'illustrations.tags-list', 'uses' => 'TagsController@tagsList']);
+        Route::get('tags/overview',             ['as' => 'tags.overview', 'uses' => 'TagsController@overview']);
+
+        Route::get('tags/create',               ['as' => 'tags.create', 'uses' => 'TagsController@createTag']);
+        Route::post('tags/create',              ['as' => 'tags.create', 'uses' => 'TagsController@storeTag']);
     }
 
 );
