@@ -27,14 +27,12 @@ class APIController extends Controller
     //$age = $_GET['age'];
 
 
-    if(isset($_GET['likes'])) {
+    if(isset($_GET['likes']) && !empty($_GET['likes'])) {
         $likes = explode(",",$_GET['likes']);
     }
     else{
         $likes = [];
     }
-    //$likes = [1,2];
-    //$illustrations = $_GET['liked'];
     $dislikes = "";
     //$illustrations = $_GET['disliked'];
 
