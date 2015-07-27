@@ -32,9 +32,13 @@ elixir(function(mix) {
         .copy(paths.bower_components + 'normalize.css/normalize.css', 'public/css/normalize.css')
 
         .copy([
-            paths.bower_components  + 'bootstrap/dist/css/bootstrap.css',
-            paths.bower_components  + 'chosen/chosen.min.css'
+            paths.bower_components  + 'bootstrap/dist/css/bootstrap.css'
         ], 'public/css/bootstrap-table.css')
+
+        .copy([
+            paths.bower_components  + 'chosen/chosen.min.css'
+
+        ], 'public/css/chosen.css')
 
         .sass('app.scss', 'public/css/')
 
@@ -55,6 +59,7 @@ elixir(function(mix) {
             'public/css/app.css',
             'public/css/bootstrap-table.css',
             'public/css/normalize.css',
+            'public/css/chosen.css',
             'public/js/app.js',
             'public/js/admin.js',
             'public/js/script.js'

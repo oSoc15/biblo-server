@@ -36,7 +36,7 @@
                                 <th><img src="/images/{{$illustration->id}}.png" alt="plaatje" class="overview-resize"/></th>
                                 <th>{{$illustration->name}}</th>
                                 <th><a href="{{ route('illustrations.edit', array($illustration->id)) }}">Wijzigen</a> | <a href="{{route('illustrations.remove', array($illustration->id))}}">Verwijderen</a></th>
-                                <th><a href="{{ route('illustrations.add-tags') }}" >Voeg tags toe</a></th>
+                                <th></th>
                             </tr>
                         @endforeach
 

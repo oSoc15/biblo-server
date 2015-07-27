@@ -7,6 +7,7 @@
 
     <link href="{{elixir('css/normalize.css')}}" rel="stylesheet">
     <link href="{{elixir('css/bootstrap-table.css')}}" rel="stylesheet">
+    <link href="{{elixir('css/chosen.css')}}" rel="stylesheet">
     <link href="{{elixir('css/app.css')}}" rel="stylesheet">
 </head>
 <body>
