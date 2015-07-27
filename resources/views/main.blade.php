@@ -22,9 +22,9 @@
                                 <img src="http://www.placehold.it/50x50" alt="placeholder"/><br>
                                 {{--Hallo, {{ Auth::user()->name }}--}}
                             </li>
-                            <li>
-                                <a href="{{url('/admin/dashboard')}}" class=""><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
-                            </li>
+                            {{--<li>--}}
+                                {{--<a href="{{url('/admin/dashboard')}}" class=""><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>--}}
+                            {{--</li>--}}
                             <li>
                                 <a href="{{url('/admin/illustrations')}}" class=""><i class="fa fa-image fa-fw"></i> Illustraties</a>
                             </li>

@@ -25,7 +25,7 @@ Route::group(['prefix' => 'admin'], function () {
         /*Main route for admin = direct to illustrations page*/
         Route::get('/', 'AdminController@illustrations');
         /*Route to dashboard*/
-        Route::get('dashboard', 'AdminController@dashboard');
+        /*Route::get('dashboard', 'AdminController@dashboard');*/
         /*Route to illustrations page */
         Route::get("illustrations",             ['as' => 'illustrations',           'uses' => 'AdminController@illustrations']);
         /*Routes get/post for creating an illustration*/

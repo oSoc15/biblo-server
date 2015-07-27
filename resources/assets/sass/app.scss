@@ -158,12 +158,20 @@ h1 {
         margin-top:20px;
     }
 
-    .input-image {
-        white-space: pre-line;
+}
+
+#home {
+
+    h3 {
+        color:$blue;
     }
 
-    .input-image:before {
+    ul {
+        list-style-type: none;
 
+        li {
+            text-align:left;
+        }
     }
 }
 
