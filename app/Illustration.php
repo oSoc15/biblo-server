@@ -17,7 +17,7 @@ class Illustration extends Model
       return $this->belongsToMany('App\Tag');
   }
 
-  public function answers()
+  public function likes()
   {
       return $this->hasMany('App\Like');
   }

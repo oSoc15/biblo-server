@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 
 use Response;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use App\Illustration;
+use App\Tag;
 
 class APIController extends Controller
 {
@@ -26,14 +25,24 @@ class APIController extends Controller
     //$branch = $_GET['branch'];
     $age = 3;
     //$age = $_GET['age'];
-    $likes = "";
+
+
+    if(isset($_GET['likes'])) {
+        $likes = explode(",",$_GET['likes']);
+    }
+    else{
+        $likes = [];
+    }
+    //$likes = [1,2];
     //$illustrations = $_GET['liked'];
     $dislikes = "";
     //$illustrations = $_GET['disliked'];
-    $this->storeLikesDislikes($likes, $dislikes);
+
+    //$this->storeLikesDislikes($likes, $dislikes);
 
     $tagsString = "";
     $tags = $this->getTagsForIllustrations($likes);
+
     $tagsString = $tagsString . array_pop($tags);
     foreach($tags as $tag){
       $tagsString = $tagsString . " OR " . $tag;
@@ -83,7 +92,18 @@ class APIController extends Controller
 
       //check if author is set
       if(array_key_exists('authors', $result)){
-        $temp["author"] = $result['authors']['main-author'];
+          if(array_key_exists('main-author', $result['authors'])){
+              $temp["author"] = $result['authors']['main-author'];
+          }
+          else{
+              if(array_key_exists('author', $result['authors'])){
+                  $temp["author"] = $result['authors']['author'][0];
+              }
+              else{
+                  $temp["author"] = "Geen auteur te vinden.";
+              }
+          }
+
       }
       else{
         $temp["author"] = "Geen auteur te vinden.";
@@ -146,8 +166,10 @@ class APIController extends Controller
   public function getTagsForIllustrations($likes){
     $tags = array();
     foreach($likes as $liked){
-      Illustration::where($liked)->tags();
+        foreach(Illustration::find((int)$liked)->tags as $tag){
+            array_push($tags,$tag['name']);
+        }
     }
-    return ["tovenaar", "paard", "voetbal"];
+    return $tags;
   }
 }
