@@ -87,7 +87,7 @@ class AdminController extends Controller
     }
 
 
-    public function createTags() {
+    public function tagsList() {
         $tags = Tag::all();
 
        return view ("admin.illustrations.create-tags", compact('tags'));

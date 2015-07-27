@@ -37,9 +37,8 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::get('sample-data', 'AdminController@sampleData');
 
-        Route::get('illustrations/add-tags',    ['as' => 'illustrations.add-tags', 'uses' => 'AdminController@addTags']);
 
-        Route::get('illustrations/create-tags', ['as' => 'illustrations.create-tags', 'uses' => 'AdminController@createTags']);
+        Route::get('illustrations/tags-list', ['as' => 'illustrations.tags-list', 'uses' => 'AdminController@tagsList']);
     }
 
 
