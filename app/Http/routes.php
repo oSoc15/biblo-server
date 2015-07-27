@@ -36,6 +36,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('analytics', "AdminController@analytics");
 
         Route::get('sample-data', 'AdminController@sampleData');
+
+        Route::get('illustrations/add-tags',                  ['as' => 'illustrations.add-tags', 'uses' => 'AdminController@addTags']);
     }
 
 

@@ -84,7 +84,7 @@ class AdminController extends Controller
     }
 
     public function addTags(){
-
+        return view("admin.illustrations.add-tags");
     }
 
 }

@@ -20,7 +20,8 @@
 
 <div class="form-group">
     {!! Form::label('Afbeelding') !!}
-    {!! Form::file('image', array('accept'=>'image/png', 'class'=>'')) !!}
+    {!! Form::file('image', array('accept'=>'image/png', 'class'=>'input-image
+    ')) !!}
 </div>
 @if(isset($illustration))
     <img src="/images/{{$illustration->id}}.png" class="edit-resize"/>

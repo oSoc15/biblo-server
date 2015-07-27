@@ -79,5 +79,7 @@ h1 {
   #create .btn-add {
     display: block;
     margin-top: 20px; }
+  #create .input-image {
+    white-space: pre-line; }
 
 /*# sourceMappingURL=app.css.map */
