@@ -11,6 +11,32 @@ class TagTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+      // clear table
+        Tag::truncate();
+        // add 1st row
+        Tag::create( [
+            'name' => 'tovenaar'
+        ] );
+        Tag::create( [
+            'name' => 'goochelen'
+        ] );
+        Tag::create( [
+            'name' => 'fantasie'
+        ] );
+        Tag::create( [
+            'name' => 'detective'
+        ] );
+        Tag::create( [
+            'name' => 'griezelverhalen'
+        ] );
+        Tag::create( [
+            'name' => 'sport'
+        ] );
+        Tag::create( [
+            'name' => 'voetbal'
+        ] );
+        Tag::create( [
+            'name' => 'vriendschap'
+        ] );
     }
 }

@@ -51,14 +51,11 @@ Route::controllers([
 
 Route::group(array('prefix' => 'API'), function () {
 
-        Route::get('/', 'APIController@index');
+        Route::get('/', 'APIController@recommendations');
 
         Route::get('recommendations', 'APIController@recommendations');
-
-        Route::get('getDataFromBIBNet', 'APIController@getDataFromBIBNet');
 
         Route::get('illustrations', 'APIController@illustrations');
 
     }
 );
-

@@ -33,7 +33,7 @@ class APIController extends Controller
     $this->storeLikesDislikes($likes, $dislikes);
 
     $tagsString = "";
-    $tags = $this->getTagsForIllustrations();
+    $tags = $this->getTagsForIllustrations($likes);
     $tagsString = $tagsString . array_pop($tags);
     foreach($tags as $tag){
       $tagsString = $tagsString . " OR " . $tag;
@@ -143,7 +143,11 @@ class APIController extends Controller
   public function storeLikesDislikes($likes, $dislikes){
   }
 
-  public function getTagsForIllustrations(){
-    return ["tovenaar", "paard", "dansen"];
+  public function getTagsForIllustrations($likes){
+    $tags = array();
+    foreach($likes as $liked){
+      Illustration::where($liked)->tags();
+    }
+    return ["tovenaar", "paard", "voetbal"];
   }
 }
