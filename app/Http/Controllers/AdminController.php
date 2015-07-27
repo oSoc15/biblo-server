@@ -11,10 +11,10 @@ use App\Tag;
 
 class AdminController extends Controller
 {
-  /*public function __construct()
+  public function __construct()
     {
         $this->middleware('auth');
-    }*/
+    }
 
 
     public function index() {
@@ -87,10 +87,5 @@ class AdminController extends Controller
     }
 
 
-    public function tagsList() {
-        $tags = Tag::all();
-
-       return view ("admin.illustrations.tags-list", compact('tags'));
-    }
 
 }
