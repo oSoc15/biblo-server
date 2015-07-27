@@ -33,7 +33,7 @@
                                 <a href="{{url('/admin/analytics')}}"><i class="fa fa-bar-chart-o fa-fw"></i> Statistiek</a>
                             </li>
                             <li>
-                                <a href="{{url('/admin/illustrations/tags-list')}}"><i class="fa fa-tags fa-fw"></i> Tags</a>
+                                <a href="{{url('/admin/tags/overview')}}"><i class="fa fa-tags fa-fw"></i> Tags</a>
                             </li>
                             <li>
                                 <a href="{{ url('/auth/logout') }}">Uitloggen</a>

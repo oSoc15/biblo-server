@@ -110,4 +110,16 @@ h1 {
   color: #fff;
   margin-bottom: 10px; }
 
+#tags .taglist {
+  margin-top: 20px; }
+  #tags .taglist .taglist-tag {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid #136DA5;
+    color: #136DA5;
+    background-color: #fff;
+    text-align: center; }
+#tags .btn-add {
+  margin-top: 0; }
+
 /*# sourceMappingURL=app.css.map */
