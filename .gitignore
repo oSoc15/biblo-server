@@ -5,3 +5,4 @@ Homestead.yaml
 .idea
 .bowerrc
 /public/build
+/storage/database.sqlite
