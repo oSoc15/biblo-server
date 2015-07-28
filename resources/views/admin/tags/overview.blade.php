@@ -6,12 +6,15 @@
 <div id="tags">
     <div id="page-wrapper" class="col-lg-5 col-lg-push-4">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-6">
                 <h1>Tags<!--has to be dynamic based on the a href--></h1>
+            </div>
+            <div class="col-lg-6 text-right">
+             <a href="{{url('admin/tags/create')}}"><div class="btn btn-add">Nieuwe tag maken</div></a>
             </div>
         </div>
 
-        <a href="{{url('admin/tags/create')}}"><div class="btn btn-add">Nieuwe tag maken</div></a>
+
 
         <div class="row taglist">
             @foreach ($tags as $tag)

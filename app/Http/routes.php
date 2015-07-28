@@ -52,6 +52,9 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('tags/create',              ['as' => 'tags.create', 'uses' => 'TagsController@storeTag']);
 
         Route::get('tags/remove/{id}',          ['as' => 'tags.remove', 'uses' => 'TagsController@removeTag']);
+
+        Route::get('tags/edit/{id}',            ['as' => 'tags.edit', 'uses' => 'TagsController@editTag']);
+        Route::post('tags/edit/{id}',           ['as' => 'tags.edit', 'uses' => 'TagsController@updateTag']);
     }
 
 );
