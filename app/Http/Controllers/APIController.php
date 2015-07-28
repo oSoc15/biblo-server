@@ -141,7 +141,7 @@ class APIController extends Controller
       return json_encode($output);
       }
     }
-    return "Bieblo service unavailable";
+    return "unavailable";
   }
 
   /**
