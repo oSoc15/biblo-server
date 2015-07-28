@@ -142,7 +142,85 @@ class APIController extends Controller
       return json_encode($output);
       }
     }
-    return "unavailable";
+    else{
+      $url = "http://" . $server . ".staging.aquabrowser.be//api/v0/search/?q=" . "(language:" . $language . " AND format:" . $format . " AND " . $age . ")&authorization=26f9ce7cdcbe09df6f0b37d79b6c4dc2";
+      $xml = simplexml_load_file(urlencode($url)); //retrieve URL and parse XML content
+      $json = json_encode($xml);
+
+      //convert the json to an array
+      $temp = json_decode($json,TRUE);
+      if(array_key_exists('results',$temp)){
+        if(array_key_exists('result',$temp['results'])){
+      $results = $temp['results']['result'];
+      //will hold the final books
+      $output = [];
+      for ($x = 0; $x <= sizeof($results)-1; $x++) {
+        //random index
+        $result = $results[$x];
+
+        //set array
+        $temp = [
+            "coverimage" => $result['coverimage']['url'] . "&coversize=large",
+            "title" => $result['titles']['short-title']
+        ];
+
+        //check if author is set
+        if(array_key_exists('authors', $result)){
+          if(array_key_exists('main-author', $result['authors'])){
+            $temp["author"] = $result['authors']['main-author'];
+          }
+          else{
+            if(array_key_exists('author', $result['authors'])){
+              $temp["author"] = $result['authors']['author'][0];
+            }
+            else{
+              $temp["author"] = "Geen auteur te vinden.";
+            }
+          }
+
+        }
+        else{
+          $temp["author"] = "Geen auteur te vinden.";
+        }
+
+        //check if summary is set
+        if(array_key_exists('summaries', $result)){
+          if(is_array($result['summaries']['summary'])){
+            $temp["description"] = $result['summaries']['summary'][0];
+          }
+          else {
+            $temp["description"] = $result['summaries']['summary'];
+          }
+        }
+        else{
+          $temp["description"] = "Geen beschrijving te vinden.";
+        }
+
+        if(array_key_exists('genres', $result)){
+          //check if genres is set
+          if(is_array($result['genres']['genre'])){
+            $temp["genres"] = implode(", ",array_unique($result['genres']['genre']));
+          }else{
+            $temp["genres"] = $result['genres']['genre'];
+          }
+        }
+        else{
+          $temp["genres"] = "Geen genres te vinden.";
+        }
+
+
+        array_push($output, $temp);
+      }
+      //encode the array to json and return it
+      shuffle($output);
+      return json_encode($output);
+        }
+      }
+      else{
+        return "unavailable";
+      }
+    }
+
   }
 
   /**
