@@ -26,8 +26,7 @@ class APIController extends Controller
     $age = 2;
     //$age = $_GET['age'];
 
-
-    if(isset($_GET['likes']) && !empty($_GET['likes'])) {
+    if(isset($_GET['likes']) && !empty($_GET['likes']) && $_GET['likes']!= ",") {
         $likes = explode(",",$_GET['likes']);
     }
     else{
@@ -40,8 +39,9 @@ class APIController extends Controller
 
     $tagsString = "";
     $tags = $this->getTagsForIllustrations($likes);
-
+  
     $tagsString = $tagsString . array_pop($tags);
+
     foreach($tags as $tag){
       $tagsString = $tagsString . " OR " . $tag;
     }
