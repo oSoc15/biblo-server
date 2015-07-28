@@ -66,7 +66,6 @@ class APIController extends Controller
       break;
     }
 
-
     //Build BIBnet API URL
     $url = "http://" . $server . ".staging.aquabrowser.be//api/v0/search/?q=" . $tagsString . " AND (language:" . $language . " AND format:" . $format . " AND " . $age . ")&authorization=26f9ce7cdcbe09df6f0b37d79b6c4dc2";
 
@@ -75,6 +74,9 @@ class APIController extends Controller
 
     //convert the json to an array
     $temp = json_decode($json,TRUE);
+    if(array_key_exists('results',$temp)){
+      if(array_key_exists('result',$temp['results'])){
+
     $results = $temp['results']['result'];
     //will hold the final books
     $output = [];
@@ -135,8 +137,11 @@ class APIController extends Controller
 
       array_push($output, $temp);
     }
-    //encode the array to json and return it
-    return json_encode($output);
+      //encode the array to json and return it
+      return json_encode($output);
+      }
+    }
+    return "Bieblo service unavailable";
   }
 
   /**
