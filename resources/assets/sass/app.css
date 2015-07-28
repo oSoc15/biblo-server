@@ -117,12 +117,17 @@ h1 {
 #tags .taglist {
   margin-top: 20px; }
   #tags .taglist .taglist-tag {
-    text-align: right;
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 30px 0 30px 0;
     border: 2px solid #136DA5;
     color: #136DA5;
     background-color: #fff; }
+    #tags .taglist .taglist-tag .taglist-tag-left {
+      text-align: center; }
+    #tags .taglist .taglist-tag .taglist-tag-right {
+      position: absolute;
+      right: 27px;
+      top: 8px; }
     #tags .taglist .taglist-tag span {
       margin-left: 10px; }
 #tags .btn-add {

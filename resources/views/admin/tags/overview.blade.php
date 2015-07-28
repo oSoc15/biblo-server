@@ -21,13 +21,19 @@
 
              <div class="col-lg-4">
                 <div class="taglist-tag">
-                    {{$tag->name}}
+                    <div class="taglist-tag-left">
+                        {{$tag->name}}
+                    </div>
 
-                     <span>
+                    <div class="taglist-tag-right">
+                        <a href="{{route('tags.edit', array($tag->id))}}">
+                           <i class="fa fa-pencil"></i>
+                        </a>
+
                          <a href="{{route('tags.remove', array($tag->id))}}">
                             <i class="fa fa-remove"></i>
                          </a>
-                     </span>
+                     </div>
                 </div>
             </div>
             @endforeach

@@ -43,5 +43,18 @@ class TagsController extends Controller
         return redirect(route('tags.overview'));
     }
 
+    public function editTag($id){
+        $tag = Tag::find($id);
+        return view("admin.tags.create")->with(array('tag'=>$tag));
+    }
+
+    public function updateTag($id){
+        $tag = Tag::find($id);
+        $tag->fill(Request::all());
+        $tag->save();
+
+        return redirect(route('tags.overview'));
+    }
+
 
 }

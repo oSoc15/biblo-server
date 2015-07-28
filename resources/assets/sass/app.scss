@@ -223,12 +223,21 @@ h1 {
         margin-top:20px;
 
         .taglist-tag {
-            text-align:right;
             margin-bottom:10px;
-            padding:10px;
+            padding:30px 0 30px 0;
             border:2px solid $blue;
             color:$blue;
             background-color: $white;
+
+            .taglist-tag-left {
+                text-align: center;
+            }
+
+            .taglist-tag-right {
+                position:absolute;
+                right:27px;
+                top:8px;
+            }
 
             span {
                 margin-left:10px;
