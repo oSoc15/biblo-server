@@ -38,6 +38,8 @@ h1 {
       background-color: #136DA5;
       color: #fff;
       transition: 1s ease; }
+    #sidebar li .fa {
+      margin-right: 10px; }
     #sidebar li a {
       color: #136DA5; }
   #sidebar .sidebar-greeting {
@@ -119,7 +121,7 @@ h1 {
   #tags .taglist .taglist-tag {
     margin-bottom: 10px;
     padding: 30px 0 30px 0;
-    border: 2px solid #136DA5;
+    border: 2px solid #eaeaea;
     color: #136DA5;
     background-color: #fff; }
     #tags .taglist .taglist-tag .taglist-tag-left {

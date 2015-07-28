@@ -36,7 +36,7 @@
                                 <a href="{{url('/admin/tags/overview')}}"><i class="fa fa-tags fa-fw"></i> Tags</a>
                             </li>
                             <li>
-                                <a href="{{ url('/auth/logout') }}">Uitloggen</a>
+                                <a href="{{ url('/auth/logout') }}"><i class="fa fa-user-times fa-fw"></i>Uitloggen</a>
                             </li>
                         </ul>
                     </div>

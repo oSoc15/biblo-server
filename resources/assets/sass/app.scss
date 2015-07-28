@@ -68,6 +68,10 @@ h1 {
             transition:1s ease;
         }
 
+        .fa {
+            margin-right:10px;
+        }
+
         a {
             color:$blue;
         }
@@ -225,7 +229,7 @@ h1 {
         .taglist-tag {
             margin-bottom:10px;
             padding:30px 0 30px 0;
-            border:2px solid $blue;
+            border:2px solid $grey;
             color:$blue;
             background-color: $white;
 
@@ -242,9 +246,7 @@ h1 {
             span {
                 margin-left:10px;
             }
-
-            .fa {
-            }
+            
         }
     }
     .btn-add {
