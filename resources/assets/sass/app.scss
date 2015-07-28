@@ -228,7 +228,14 @@ h1 {
             border:2px solid $blue;
             color:$blue;
             background-color: $white;
-            text-align: center;
+
+            span {
+                padding-left:5px;
+            }
+
+            .fa {
+                text-align: right;
+            }
         }
     }
     .btn-add {

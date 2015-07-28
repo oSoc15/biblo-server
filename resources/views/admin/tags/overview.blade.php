@@ -21,7 +21,11 @@
 
              <div class="col-lg-3">
                 <div class="taglist-tag">
-                    {{$tag->name}} <a href="{{route('tags.remove', array($tag->id))}}"><i class="fa fa-remove"></i></a>
+                 <a href="{{route('tags.remove', array($tag->id))}}">
+                    <i class="fa fa-remove"></i>
+                 </a>
+
+                 <span>{{$tag->name}}</span>
                 </div>
             </div>
             @endforeach

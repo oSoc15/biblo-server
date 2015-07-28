@@ -121,8 +121,11 @@ h1 {
     padding: 10px;
     border: 2px solid #136DA5;
     color: #136DA5;
-    background-color: #fff;
-    text-align: center; }
+    background-color: #fff; }
+    #tags .taglist .taglist-tag span {
+      padding-left: 5px; }
+    #tags .taglist .taglist-tag .fa {
+      text-align: right; }
 #tags .btn-add {
   margin-top: 25px; }
 
