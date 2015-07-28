@@ -37,5 +37,11 @@ class TagsController extends Controller
         return redirect(route('tags.overview'));
     }
 
+    public function removeTag($id) {
+        $tag = tag::find($id);
+        $tag->delete();
+        return redirect(route('tags.overview'));
+    }
+
 
 }

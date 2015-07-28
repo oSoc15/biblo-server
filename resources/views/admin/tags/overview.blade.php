@@ -18,7 +18,7 @@
 
              <div class="col-lg-3">
                 <div class="taglist-tag">
-                    {{$tag->name}}
+                    {{$tag->name}} <a href="{{route('tags.remove', array($tag->id))}}"><i class="fa fa-remove"></i></a>
                 </div>
             </div>
             @endforeach
