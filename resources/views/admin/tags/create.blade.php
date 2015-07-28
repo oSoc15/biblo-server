@@ -13,7 +13,7 @@
 
         <div class="row">
             <div class="col-lg-12">
-                {!! Form::model('Tag') !!}
+                {!! Form::model($tag) !!}
 
                 <div class="form-group ">
                     {!! Form::label('tag') !!}<br>

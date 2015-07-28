@@ -25,11 +25,11 @@ class TagsController extends Controller
     }
 
     public function createTag(){
-        return view ("admin.tags.create")->with(array('tags'=>'name'));
+        return view ("admin.tags.create")->with(array('tag'=>'name'));
     }
 
     public function storeTag() {
-        $input = Tag::all(); /*  haal alles af */
+        $input = Request::all(); /*  haal alles af */
         $tag = new Tag(); /* variabele die nieuwe illustratie is */
         $tag->fill($input); /* vult variabele (die een illustratie is) met informatie die opgehaald wordt */
         $tag->save(); /* slaat variabele op */
