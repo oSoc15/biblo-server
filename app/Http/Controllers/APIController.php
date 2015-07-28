@@ -39,7 +39,7 @@ class APIController extends Controller
 
     $tagsString = "";
     $tags = $this->getTagsForIllustrations($likes);
-  
+
     $tagsString = $tagsString . array_pop($tags);
 
     foreach($tags as $tag){
@@ -138,6 +138,7 @@ class APIController extends Controller
       array_push($output, $temp);
     }
       //encode the array to json and return it
+        shuffle($output);
       return json_encode($output);
       }
     }
