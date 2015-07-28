@@ -31,7 +31,7 @@ class TagsController extends Controller
     public function storeTag() {
         $input = Tag::all(); /*  haal alles af */
         $tag = new Tag(); /* variabele die nieuwe illustratie is */
-        $tag->fill($input->name); /* vult variabele (die een illustratie is) met informatie die opgehaald wordt */
+        $tag->fill($input); /* vult variabele (die een illustratie is) met informatie die opgehaald wordt */
         $tag->save(); /* slaat variabele op */
 
         return redirect(route('tags.overview'));

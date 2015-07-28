@@ -20,7 +20,7 @@
                     <div class="sidebar-nav">
                         <ul class="nav in" id="side-menu">
                             <li class="sidebar-greeting">
-                                <img src="http://www.placehold.it/50x50" alt="placeholder"/><br>
+                                <img src="http://www.placehold.it/50x50" alt="placeholder" class="sidebar-avatar"/><br>
                                 Hallo, {{ Auth::user()->name }}
                             </li>
                             {{--<li>--}}

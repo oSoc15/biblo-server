@@ -42,8 +42,12 @@ h1 {
   #sidebar .sidebar-greeting {
     padding: 15px 0 15px 0;
     text-align: center; }
-  #sidebar .sidebar-greeting img {
-    padding-bottom: 15px; }
+    #sidebar .sidebar-greeting .sidebar-avatar {
+      width: 50px;
+      max-width: 50px;
+      height: 50px;
+      max-height: 50px;
+      margin-bottom: 15px; }
 
 .submenu {
   list-style: none;
