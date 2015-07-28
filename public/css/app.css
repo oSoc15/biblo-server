@@ -8,6 +8,7 @@ h1 {
   color: #fff;
   background-color: #136DA5;
   transition: 0.5s ease-in;
+  border-radius: 0;
   margin-top: 20px; }
   .btn-add a {
     color: #fff;
@@ -82,7 +83,6 @@ h1 {
     height: 100px;
     max-height: 100px; }
   #create .btn-add {
-    border-radius: 0;
     display: block;
     margin-top: 50px; }
   #create .tags {
@@ -119,15 +119,14 @@ h1 {
 #tags .taglist {
   margin-top: 20px; }
   #tags .taglist .taglist-tag {
+    text-align: right;
     margin-bottom: 10px;
     padding: 10px;
     border: 2px solid #136DA5;
     color: #136DA5;
     background-color: #fff; }
     #tags .taglist .taglist-tag span {
-      padding-left: 5px; }
-    #tags .taglist .taglist-tag .fa {
-      text-align: right; }
+      margin-left: 10px; }
 
 #tags .btn-add {
   margin-top: 25px; }

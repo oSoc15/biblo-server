@@ -24,6 +24,7 @@ h1 {
     color:$white;
     background-color:$blue;
     transition: 0.5s ease-in;
+    border-radius:0;
 
     margin-top:20px;
 
@@ -161,7 +162,6 @@ h1 {
     }
 
     .btn-add {
-        border-radius:0;
         display:block;
         margin-top:50px;
     }
@@ -223,6 +223,7 @@ h1 {
         margin-top:20px;
 
         .taglist-tag {
+            text-align:right;
             margin-bottom:10px;
             padding:10px;
             border:2px solid $blue;
@@ -230,11 +231,10 @@ h1 {
             background-color: $white;
 
             span {
-                padding-left:5px;
+                margin-left:10px;
             }
 
             .fa {
-                text-align: right;
             }
         }
     }

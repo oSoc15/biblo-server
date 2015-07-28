@@ -19,13 +19,15 @@
         <div class="row taglist">
             @foreach ($tags as $tag)
 
-             <div class="col-lg-3">
+             <div class="col-lg-4">
                 <div class="taglist-tag">
-                 <a href="{{route('tags.remove', array($tag->id))}}">
-                    <i class="fa fa-remove"></i>
-                 </a>
+                    {{$tag->name}}
 
-                 <span>{{$tag->name}}</span>
+                     <span>
+                         <a href="{{route('tags.remove', array($tag->id))}}">
+                            <i class="fa fa-remove"></i>
+                         </a>
+                     </span>
                 </div>
             </div>
             @endforeach
