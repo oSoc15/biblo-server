@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use DB;
 use App\Illustration;
 use Request;
 use App\Http\Requests;
@@ -19,7 +19,7 @@ class TagsController extends Controller
 
 
     public function overview() {
-        $tags = Tag::all();
+        $tags = DB::table('tags')->orderBy('name', 'asc')->get();
 
         return view ("admin.tags.overview", compact('tags'));
     }
