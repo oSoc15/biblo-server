@@ -43,10 +43,13 @@ class AdminController extends Controller
         $illustration->fill($input); /* vult variabele (die een illustratie is) met informatie die opgehaald wordt */
         $illustration->save(); /* slaat variabele op */
 
-        $tags = $input["tags"];
-        foreach($tags as $tag){
-            $illustration->tags()->attach($tag);
+        if(array_key_exists('tags',$input)){
+            $tags = $input["tags"];
+            foreach($tags as $tag){
+                $illustration->tags()->attach($tag);
+            }
         }
+
 
         if(Request::hasFile('image') && Request::file('image')->getClientOriginalExtension() == "png")
         {
@@ -60,15 +63,28 @@ class AdminController extends Controller
     }
 
     public function editIllustration($id){
-        $tags = Tag::all()->take(3);
+        $tags = Tag::all();
         $illustration = Illustration::find($id)->load('tags');
         return view("admin.illustrations.create", compact('tags'))->with(array('illustration'=>$illustration));
     }
 
     public function updateIllustration($id) {
+        $input = Request::all(); /*  haal alles af */
+
         $illustration = Illustration::find($id);
-        $illustration->fill(Request::all());
-        $illustration->save();
+        $illustration->fill($input); /* vult variabele (die een illustratie is) met informatie die opgehaald wordt */
+        $illustration->save(); /* slaat variabele op */
+        //$illustration->tags()->delete();
+
+        \DB::table('illustration_tag')->where('illustration_id', '=', $illustration->id)->delete();
+
+        if(array_key_exists('tags',$input)){
+            $tags = $input["tags"];
+
+            foreach($tags as $tag){
+                $illustration->tags()->attach($tag);
+            }
+        }
 
         if(Request::hasFile('image') && Request::file('image')->getClientOriginalExtension() == "png")
         {
