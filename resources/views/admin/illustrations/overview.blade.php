@@ -36,10 +36,13 @@
                                 <th><img src="/images/{{$illustration->id}}.png" alt="plaatje" class="overview-resize"/></th>
                                 <th>{{$illustration->name}}</th>
                                 <th><a href="{{ route('illustrations.edit', array($illustration->id)) }}">Wijzigen</a> <br> <a href="{{route('illustrations.remove', array($illustration->id))}}">Verwijderen</a></th>
-                                <th>{{$illustration->tag}}</th>
+                                <th>
+                                    @foreach ($illustration->tags as $tag)
+                                        #{{$tag->name}}
+                                    @endforeach
+                                </th>
                             </tr>
                         @endforeach
-
                     </tbody>
                 </table>
             </div>

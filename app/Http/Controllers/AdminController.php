@@ -26,13 +26,9 @@ class AdminController extends Controller
     }
 
     public function illustrations() {
-        $illustrations = Illustration::all();
+        $illustrations = Illustration::all()->load('tags');
 
         return view ("admin.illustrations.overview", compact('illustrations', 'tags'));
-    }
-
-    public function analytics() {
-        return view ("admin.analytics");
     }
 
     public function createIllustration() {
@@ -47,6 +43,11 @@ class AdminController extends Controller
         $illustration->fill($input); /* vult variabele (die een illustratie is) met informatie die opgehaald wordt */
         $illustration->save(); /* slaat variabele op */
 
+        /*$tags = [];
+        foreach($tags as $tag){
+            $illustration->tags()->attach($tag->$id);
+        }*/
+
         if(Request::hasFile('image') && Request::file('image')->getClientOriginalExtension() == "png")
         {
             $imageName = $illustration->id . '.png';
@@ -60,7 +61,7 @@ class AdminController extends Controller
 
     public function editIllustration($id){
         $tags = Tag::all();
-        $illustration = Illustration::find($id);
+        $illustration = Illustration::find($id)->load('tags');
         return view("admin.illustrations.create", compact('tags'))->with(array('illustration'=>$illustration));
     }
 
@@ -83,6 +84,12 @@ class AdminController extends Controller
     public function removeIllustration($id){
         $illustration = Illustration::find($id);
         $illustration->delete();
+
+        //@TODO: Delete $id.png -> image
+
+        $imageName = $illustration->id . '.png';
+
+
         return redirect(route('illustrations'));
     }
 

@@ -30,7 +30,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/', 'AdminController@illustrations');
 
         /*Route for Analytics*/
-        Route::get('analytics', "AdminController@analytics");
+        Route::get('charts',                    ['as' => 'charts',                  'uses' => 'ChartsController@charts']);
 
 
         /*Route to dashboard*/

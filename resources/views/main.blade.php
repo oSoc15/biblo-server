@@ -30,7 +30,7 @@
                                 <a href="{{url('/admin/illustrations')}}" class=""><i class="fa fa-image fa-fw"></i> Illustraties</a>
                             </li>
                             <li>
-                                <a href="{{url('/admin/analytics')}}"><i class="fa fa-bar-chart-o fa-fw"></i> Statistiek</a>
+                                <a href="{{url('/admin/charts')}}"><i class="fa fa-bar-chart-o fa-fw"></i> Statistiek</a>
                             </li>
                             <li>
                                 <a href="{{url('/admin/tags/overview')}}"><i class="fa fa-tags fa-fw"></i> Tags</a>
