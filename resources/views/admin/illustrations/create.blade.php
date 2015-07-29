@@ -24,7 +24,7 @@
 
     <select multiple data-placeholder="Voeg 5 tags toe aan de afbeelding" name="tags[]" class="chosen-select tags" >
         @foreach ($tags as $tag)
-            <option @foreach ($illustration->tags as $selectedTag) @if ($selectedTag->name == $tag->name) selected="selected" @endif @endforeach value="{{$tag->id}}">{{$tag->name}}</option>
+            <option @if($edit) @foreach ($illustration->tags as $selectedTag) @if ($selectedTag->name == $tag->name) selected="selected" @endif @endforeach @endif value="{{$tag->id}}">{{$tag->name}}</option>
         @endforeach
     </select>
 

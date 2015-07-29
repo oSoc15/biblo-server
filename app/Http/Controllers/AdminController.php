@@ -33,8 +33,8 @@ class AdminController extends Controller
 
     public function createIllustration() {
         $tags = Tag::all();
-
-        return view ("admin.illustrations.create", compact('tags'))->with(array('illustration'=>null));
+        $edit = false;
+        return view ("admin.illustrations.create", compact('tags', 'edit'))->with(array('illustration'=>null));
     }
 
     public function storeIllustration() {
@@ -65,7 +65,8 @@ class AdminController extends Controller
     public function editIllustration($id){
         $tags = Tag::all();
         $illustration = Illustration::find($id)->load('tags');
-        return view("admin.illustrations.create", compact('tags'))->with(array('illustration'=>$illustration));
+        $edit = true;
+        return view("admin.illustrations.create", compact('tags','edit'))->with(array('illustration'=>$illustration));
     }
 
     public function updateIllustration($id) {
