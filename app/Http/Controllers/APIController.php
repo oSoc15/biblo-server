@@ -39,7 +39,6 @@ class APIController extends Controller
 
     $tagsString = "";
     $tags = $this->getTagsForIllustrations($likes);
-
     $tagsString = $tagsString . array_pop($tags);
 
     foreach($tags as $tag){
@@ -67,7 +66,8 @@ class APIController extends Controller
     }
 
     //Build BIBnet API URL
-    $url = "http://" . $server . ".staging.aquabrowser.be//api/v0/search/?q=" . $tagsString . " AND (language:" . $language . " AND format:" . $format . " AND " . $age . ")&authorization=26f9ce7cdcbe09df6f0b37d79b6c4dc2";
+    //$url = "http://" . $server . ".staging.aquabrowser.be//api/v0/search/?q=" . $tagsString . " AND (language:" . $language . " AND format:" . $format . " AND " . $age . ")&authorization=26f9ce7cdcbe09df6f0b37d79b6c4dc2";
+    $url = "http://zoeken.gent.bibliotheek.be//api/v0/search/?q=" . $tagsString . " AND (language:" . $language . " AND format:" . $format . " AND " . $age . ")&authorization=26f9ce7cdcbe09df6f0b37d79b6c4dc2";
 
     $xml = simplexml_load_file(urlencode($url)); //retrieve URL and parse XML content
     $json = json_encode($xml);
