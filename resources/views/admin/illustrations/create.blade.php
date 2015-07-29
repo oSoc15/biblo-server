@@ -22,9 +22,9 @@
 <div class="form-group">
     {!! Form::label('tags (max 5)') !!}<br>
 
-    <select multiple data-placeholder="Voeg 5 tags toe aan de afbeelding" name="tags" class="chosen-select tags" >
+    <select multiple data-placeholder="Voeg 5 tags toe aan de afbeelding" name="tags[]" class="chosen-select tags" >
         @foreach ($tags as $tag)
-            <option value="{{$tag->name}}">{{$tag->name}}</option>
+            <option value="{{$tag->id}}">{{$tag->name}}</option>
         @endforeach
     </select>
 
