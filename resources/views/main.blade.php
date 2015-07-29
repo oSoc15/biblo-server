@@ -5,11 +5,11 @@
     <title>Biblo Admin-Panel</title>
 
 
-    <link href="{{elixir('css/normalize.css')}}" rel="stylesheet">
-    <link href="{{elixir('css/bootstrap-table.css')}}" rel="stylesheet">
-    <link href="{{url('/css/font-awesome.css')}}" rel="stylesheet">
-    <link href="{{elixir('css/chosen.css')}}" rel="stylesheet">
-    <link href="{{elixir('css/app.css')}}" rel="stylesheet">
+    <link href="{{elixir('css/normalize.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{elixir('css/bootstrap-table.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{url('/css/font-awesome.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{elixir('css/chosen.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{elixir('css/app.css')}}" rel="stylesheet" type="text/css">
 </head>
 <body>
 
