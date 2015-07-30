@@ -12,14 +12,13 @@ class LikeTableMigration extends Migration
      */
     public function up()
     {
-      Schema::create('likes', function(Blueprint $table){
-        $table->increments('id');
-        $table->boolean('liked');
-      $table->timestamps('created_at');
-      $table->integer('illustration_id')->unsigned();
-      $table->foreign('illustration_id')->references('id')->on('illustrations')->onDelete('cascade');
-
-      });
+          Schema::create('likes', function(Blueprint $table){
+              $table->increments('id');
+              $table->boolean('liked');
+              $table->timestamps('created_at');
+              $table->integer('illustration_id')->unsigned();
+              $table->foreign('illustration_id')->references('id')->on('illustrations')->onDelete('cascade');
+          });
     }
 
     /**
