@@ -32,6 +32,8 @@ Route::group(['prefix' => 'admin'], function () {
         /*Route for Analytics*/
         Route::get('charts',                    ['as' => 'charts',                  'uses' => 'ChartsController@charts']);
 
+        Route::get('email',                     ['as' => 'email',                   'uses' => 'AdminController@email']);
+
 
         /*Route to dashboard*/
         /*Route::get('dashboard', 'AdminController@dashboard');*/
@@ -46,6 +48,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('illustrations/edit/{id}',  ['as' => 'illustrations.edit',      'uses' => 'AdminController@updateIllustration']);
         /*Routes for removing picture */
         Route::get('illustrations/remove/{id}', ['as' => 'illustrations.remove',    'uses' => 'AdminController@removeIllustration']);
+
+
 
         /* Routes for TagsController */
         Route::get('tags/overview',             ['as' => 'tags.overview', 'uses' => 'TagsController@overview']);
