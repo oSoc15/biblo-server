@@ -17,6 +17,18 @@ Once everything is set up, run `composer install`.
 Further in, run `npm install` and `bower install`. 
 Run `gulp` once to initialize everything in terms of styling and functionality. If you are running Laravel in Homestead, don't run gulp in your virtual environment, but locally as well!
 
+### Models
+Create models when necessary.
+
+### Views
+
+Going through the back-office you will notice that the language is **NL (Dutch)** for now. More languages will be added later on. For now, we are focussing on the **Belgian (Dutch-speaking)** libraries.
+
+### Controllers
+
+While not a necessity, we strongly urge creating controllers based on models (that are being actively used in the application). 
+Make your controllers (and functions inside of them) accordingly, it will save you a ton of time, and your code will be way more consistent!
+
 ### License
 
 Bieblo-Server is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
