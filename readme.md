@@ -9,7 +9,7 @@ It currently runs on [Laravel 5.1](http://laravel.com).
 
 ### Documentation
 
-First of all choose in which environment you are going to run Bieblo-server. We suggest running it in Homestead.
+First of all choose in which environment you are going to run Bieblo-server. We suggest running it in **Homestead**.
 Visit [the official Laravel documentation] (http://laravel.com/docs/5.1/homestead) for more information.
 
 Once everything is set up, run `composer install`.
@@ -18,7 +18,7 @@ Further in, run `npm install` and `bower install`.
 Run `gulp` once to initialize everything in terms of styling and functionality. If you are running Laravel in Homestead, don't run gulp in your virtual environment, but locally as well!
 
 ### Models
-Create models when necessary.
+Only create models when necessary. :)
 
 ### Views
 
@@ -31,4 +31,4 @@ Make your controllers (and functions inside of them) accordingly, it will save y
 
 ### License
 
-Bieblo-Server is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+Bieblo-Server is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
