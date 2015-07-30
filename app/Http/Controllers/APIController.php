@@ -7,6 +7,7 @@ use Response;
 use App\Http\Requests;
 use App\Illustration;
 use App\Like;
+use Mail;
 
 class APIController extends Controller
 {
@@ -73,7 +74,7 @@ class APIController extends Controller
     //Build BIBnet API URL
     //$url = "http://" . $server . ".staging.aquabrowser.be//api/v0/search/?q=" . $tagsString . " AND (language:" . $language . " AND format:" . $format . " AND " . $age . ")&authorization=26f9ce7cdcbe09df6f0b37d79b6c4dc2";
     $url = "http://zoeken.gent.bibliotheek.be//api/v0/search/?q=" . $tagsString . " AND (language:" . $language . " AND format:" . $format . " AND " . $age . ")&authorization=26f9ce7cdcbe09df6f0b37d79b6c4dc2";
-
+    return ($url);
     $xml = simplexml_load_file(urlencode($url)); //retrieve URL and parse XML content
     $json = json_encode($xml);
 
@@ -313,11 +314,16 @@ class APIController extends Controller
 
     $subject = "Jouw favoriete boeken verzameld door Bieblo";
 
-    if(isset($_POST['to']) && isset($_POST['books'])){
-      $to = $_POST['to'];
-      $message = $_POST['books'];
+    //if(isset($_POST['email']) && isset($_POST['books'])){
+    if(isset($_GET['email'])){
+      Mail::queue('emails.welcome', [], function ($message) use ($subject) {
+        $message->from('info@bieblo.be', 'Bieblo');
+
+        $message->to($_GET['email']);
+
+        $message->subject($subject);
+      });
     }
-    mail($to,$subject,$message);
 
     return $succes;
   }
