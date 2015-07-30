@@ -6,7 +6,8 @@ namespace App\Http\Controllers;
 use Response;
 use App\Http\Requests;
 use App\Illustration;
-use App\Tag;
+use App\Like;
+use Mail;
 
 class APIController extends Controller
 {
@@ -32,8 +33,13 @@ class APIController extends Controller
     else{
         $likes = [];
     }
-    $dislikes = "";
-    //$illustrations = $_GET['disliked'];
+
+    if(isset($_GET['dislikes']) && !empty($_GET['dislikes']) && $_GET['dislikes']!= ",") {
+      $dislikes = explode(",",$_GET['dislikes']);
+    }
+    else{
+      $dislikes = [];
+    }
 
     //$this->storeLikesDislikes($likes, $dislikes);
 
@@ -68,7 +74,7 @@ class APIController extends Controller
     //Build BIBnet API URL
     //$url = "http://" . $server . ".staging.aquabrowser.be//api/v0/search/?q=" . $tagsString . " AND (language:" . $language . " AND format:" . $format . " AND " . $age . ")&authorization=26f9ce7cdcbe09df6f0b37d79b6c4dc2";
     $url = "http://zoeken.gent.bibliotheek.be//api/v0/search/?q=" . $tagsString . " AND (language:" . $language . " AND format:" . $format . " AND " . $age . ")&authorization=26f9ce7cdcbe09df6f0b37d79b6c4dc2";
-
+    return ($url);
     $xml = simplexml_load_file(urlencode($url)); //retrieve URL and parse XML content
     $json = json_encode($xml);
 
@@ -103,7 +109,6 @@ class APIController extends Controller
                   $temp["author"] = "Geen auteur te vinden.";
               }
           }
-
       }
       else{
         $temp["author"] = "Geen auteur te vinden.";
@@ -122,18 +127,31 @@ class APIController extends Controller
         $temp["description"] = "Geen beschrijving te vinden.";
       }
 
-      if(array_key_exists('genres', $result)){
-        //check if genres is set
-        if(is_array($result['genres']['genre'])){
-          $temp["genres"] = implode(", ",array_unique($result['genres']['genre']));
-        }else{
-          $temp["genres"] = $result['genres']['genre'];
+      if(array_key_exists('identifiers', $result)){
+        if(array_key_exists('isbn-id', $result['identifiers'])){
+          $temp["isbn"] = $result['identifiers']['isbn-id'];
         }
       }
       else{
-        $temp["genres"] = "Geen genres te vinden.";
+        $temp["isbn"] = "Geen isbn te vinden.";
       }
 
+      if(array_key_exists('authors', $result)){
+        if(array_key_exists('main-author', $result['authors'])){
+          $temp["author"] = $result['authors']['main-author'];
+        }
+        else{
+          if(array_key_exists('author', $result['authors'])){
+            $temp["author"] = $result['authors']['author'][0];
+          }
+          else{
+            $temp["author"] = "Geen auteur te vinden.";
+          }
+        }
+      }
+      else{
+        $temp["author"] = "Geen auteur te vinden.";
+      }
 
       array_push($output, $temp);
     }
@@ -224,9 +242,9 @@ class APIController extends Controller
   }
 
   /**
-  * Get recommendations.
+  * Get all illustrations available.
   * @
-  * @return Recommended books
+  * @return Illustrations
   */
   public function illustrations()
   {
@@ -241,15 +259,74 @@ class APIController extends Controller
   }
 
   public function storeLikesDislikes($likes, $dislikes){
+      foreach($likes as $like){
+        if(Illustration::find((int)$like) != null) {
+          $illustration = Illustration::find((int)$like);
+          /*// add 1st row
+          $like = Like::create([
+              'liked' => true
+          ]);*/
+
+          $like = new Like();
+          $like->liked = true;
+          //$like->save();
+          $illustration->likes()->save($like);
+        }
+      }
+
+      foreach($dislikes as $dislike){
+        if(Illustration::find((int)$dislike) != null){
+          $illustration = Illustration::find((int)$dislike);
+          // add 1st row
+         /* $dislike = Like::create( [
+              'liked' => false
+          ] );*/
+
+          $dislike = new Like();
+          $dislike->liked = false;
+          //$dislike->save();
+          $illustration->likes()->save($dislike);
+        }
+      }
+
   }
 
   public function getTagsForIllustrations($likes){
     $tags = array();
     foreach($likes as $liked){
-        foreach(Illustration::find((int)$liked)->tags as $tag){
-            array_push($tags,$tag['name']);
+        if(Illustration::find((int)$liked) != null){
+          foreach(Illustration::find((int)$liked)->tags as $tag){
+              array_push($tags,$tag['name']);
+          }
         }
     }
     return $tags;
   }
+
+  /**
+   * Mail function.
+   * @
+   * @return Mail function
+   */
+  public function mail()
+  {
+    $succes = [];
+
+    $subject = "Jouw favoriete boeken verzameld door Bieblo";
+
+    //if(isset($_POST['email']) && isset($_POST['books'])){
+    if(isset($_GET['email'])){
+      Mail::queue('emails.welcome', [], function ($message) use ($subject) {
+        $message->from('info@bieblo.be', 'Bieblo');
+
+        $message->to($_GET['email']);
+
+        $message->subject($subject);
+      });
+    }
+
+    return $succes;
+  }
+
 }
+

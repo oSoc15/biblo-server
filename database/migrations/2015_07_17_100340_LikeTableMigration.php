@@ -15,7 +15,10 @@ class LikeTableMigration extends Migration
       Schema::create('likes', function(Blueprint $table){
         $table->increments('id');
         $table->boolean('liked');
-        $table->timestamps('created_at');
+      $table->timestamps('created_at');
+      $table->integer('illustration_id')->unsigned();
+      $table->foreign('illustration_id')->references('id')->on('illustrations')->onDelete('cascade');
+
       });
     }
 

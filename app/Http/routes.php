@@ -82,5 +82,6 @@ Route::group(array('prefix' => 'API'), function () {
 
         Route::get('illustrations', 'APIController@illustrations');
 
+        Route::get('mail', 'APIController@mail');
     }
 );
