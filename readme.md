@@ -1,8 +1,8 @@
 ## Bieblo Server
 
-### Bieblo is the Back-office of Bieblo App (which can be found [here](https://github.com/oSoc15/biblo-app).)
+### Bieblo Server is the Back-office of Bieblo App (which can be found [here](https://github.com/oSoc15/biblo-app).)
 
-Bieblo is a new intuitive and fun recommendation app for children. It can be tested at
+Bieblo is a new, intuitive and fun book-recommendation app for children. It can be tested at
 [http://www.bieblo.be] (http://www.bieblo.be)
 
 It currently runs on [Laravel 5.1](http://laravel.com).
