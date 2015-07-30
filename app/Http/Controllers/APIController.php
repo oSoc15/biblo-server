@@ -35,7 +35,7 @@ class APIController extends Controller
     $dislikes = "";
     //$illustrations = $_GET['disliked'];
 
-    //$this->storeLikesDislikes($likes, $dislikes);
+    $this->storeLikesDislikes($likes, $dislikes);
 
     $tagsString = "";
     $tags = $this->getTagsForIllustrations($likes);
@@ -224,9 +224,9 @@ class APIController extends Controller
   }
 
   /**
-  * Get recommendations.
+  * Get all illustrations available.
   * @
-  * @return Recommended books
+  * @return Illustrations
   */
   public function illustrations()
   {
@@ -241,6 +241,24 @@ class APIController extends Controller
   }
 
   public function storeLikesDislikes($likes, $dislikes){
+      foreach($likes as $like){
+          $illustration = Illustration::find((int)$like);
+          // add 1st row
+          $like = Like::create( [
+              'liked' => 'true'
+          ] );
+          $illustration->likes()->attach($like->id);
+      }
+
+      foreach($dislikes as $dislike){
+          $illustration = Illustration::find((int)$like);
+          // add 1st row
+          $like = Like::create( [
+              'liked' => 'false'
+          ] );
+          $illustration->likes()->attach($like->id);
+      }
+
   }
 
   public function getTagsForIllustrations($likes){
@@ -252,4 +270,26 @@ class APIController extends Controller
     }
     return $tags;
   }
+
+  /**
+   * Mail function.
+   * @
+   * @return Mail function
+   */
+  public function mail()
+  {
+    $succes = [];
+
+    $subject = "Jouw favoriete boeken verzameld door Bieblo";
+
+    if(isset($_POST['to']) && isset($_POST['books'])){
+      $to = $_POST['to'];
+      $message = $_POST['books'];
+    }
+    mail($to,$subject,$message);
+
+    return $succes;
+  }
+
 }
+
