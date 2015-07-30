@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use Response;
 use App\Http\Requests;
 use App\Illustration;
-use App\Tag;
+use App\Like;
 
 class APIController extends Controller
 {
@@ -32,10 +32,15 @@ class APIController extends Controller
     else{
         $likes = [];
     }
-    $dislikes = "";
-    //$illustrations = $_GET['disliked'];
 
-    $this->storeLikesDislikes($likes, $dislikes);
+    if(isset($_GET['dislikes']) && !empty($_GET['dislikes']) && $_GET['dislikes']!= ",") {
+      $dislikes = explode(",",$_GET['dislikes']);
+    }
+    else{
+      $dislikes = [];
+    }
+
+    //$this->storeLikesDislikes($likes, $dislikes);
 
     $tagsString = "";
     $tags = $this->getTagsForIllustrations($likes);
@@ -103,7 +108,6 @@ class APIController extends Controller
                   $temp["author"] = "Geen auteur te vinden.";
               }
           }
-
       }
       else{
         $temp["author"] = "Geen auteur te vinden.";
@@ -122,18 +126,31 @@ class APIController extends Controller
         $temp["description"] = "Geen beschrijving te vinden.";
       }
 
-      if(array_key_exists('genres', $result)){
-        //check if genres is set
-        if(is_array($result['genres']['genre'])){
-          $temp["genres"] = implode(", ",array_unique($result['genres']['genre']));
-        }else{
-          $temp["genres"] = $result['genres']['genre'];
+      if(array_key_exists('identifiers', $result)){
+        if(array_key_exists('isbn-id', $result['identifiers'])){
+          $temp["isbn"] = $result['identifiers']['isbn-id'];
         }
       }
       else{
-        $temp["genres"] = "Geen genres te vinden.";
+        $temp["isbn"] = "Geen isbn te vinden.";
       }
 
+      if(array_key_exists('authors', $result)){
+        if(array_key_exists('main-author', $result['authors'])){
+          $temp["author"] = $result['authors']['main-author'];
+        }
+        else{
+          if(array_key_exists('author', $result['authors'])){
+            $temp["author"] = $result['authors']['author'][0];
+          }
+          else{
+            $temp["author"] = "Geen auteur te vinden.";
+          }
+        }
+      }
+      else{
+        $temp["author"] = "Geen auteur te vinden.";
+      }
 
       array_push($output, $temp);
     }
@@ -242,21 +259,33 @@ class APIController extends Controller
 
   public function storeLikesDislikes($likes, $dislikes){
       foreach($likes as $like){
+        if(Illustration::find((int)$like) != null) {
           $illustration = Illustration::find((int)$like);
-          // add 1st row
-          $like = Like::create( [
-              'liked' => 'true'
-          ] );
-          $illustration->likes()->attach($like->id);
+          /*// add 1st row
+          $like = Like::create([
+              'liked' => true
+          ]);*/
+
+          $like = new Like();
+          $like->liked = true;
+          //$like->save();
+          $illustration->likes()->save($like);
+        }
       }
 
       foreach($dislikes as $dislike){
-          $illustration = Illustration::find((int)$like);
+        if(Illustration::find((int)$dislike) != null){
+          $illustration = Illustration::find((int)$dislike);
           // add 1st row
-          $like = Like::create( [
-              'liked' => 'false'
-          ] );
-          $illustration->likes()->attach($like->id);
+         /* $dislike = Like::create( [
+              'liked' => false
+          ] );*/
+
+          $dislike = new Like();
+          $dislike->liked = false;
+          //$dislike->save();
+          $illustration->likes()->save($dislike);
+        }
       }
 
   }
@@ -264,8 +293,10 @@ class APIController extends Controller
   public function getTagsForIllustrations($likes){
     $tags = array();
     foreach($likes as $liked){
-        foreach(Illustration::find((int)$liked)->tags as $tag){
-            array_push($tags,$tag['name']);
+        if(Illustration::find((int)$liked) != null){
+          foreach(Illustration::find((int)$liked)->tags as $tag){
+              array_push($tags,$tag['name']);
+          }
         }
     }
     return $tags;
