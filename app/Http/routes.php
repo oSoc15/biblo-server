@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
+Route::get('home', 'AdminController@illustrations');
 
 Route::get('admin', 'AdminController@index');
 
