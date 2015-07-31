@@ -6,7 +6,7 @@
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
 				<div class="panel-heading text-center">
-                   <img src="http://placehold.it/50x50" alt="placeholder" class=""/>
+                   <img src="{{ asset('images/logo.png') }}" alt="placeholder" class=""/>
                 </div>
 				<div class="panel-body">
 
@@ -42,7 +42,7 @@
 							<div class="col-md-6 col-md-offset-4">
 								<div class="checkbox">
 									<label>
-										<input type="checkbox" name="remember"> Remember Me
+										<input type="checkbox" name="remember"> Blijf ingelogd
 									</label>
 								</div>
 							</div>
