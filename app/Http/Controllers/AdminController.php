@@ -110,6 +110,7 @@ class AdminController extends Controller
         return redirect(route('illustrations'));
     }
 
-
-
+    public function email(){
+        return view ('admin.email');
+    }
 }

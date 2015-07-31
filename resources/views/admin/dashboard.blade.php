@@ -14,7 +14,7 @@
                     <div class="panel-heading">Maak een account aan</div>
                     <div class="panel-body">
                         @if (count($errors) > 0)
-                            <div class="alert alert-danger">
+                             <div class="alert alert-danger">
                                 <strong>Oei,</strong> er waren problemen: <br><br>
                                 <ul>
                                     @foreach ($errors->all() as $error)
