@@ -42,7 +42,7 @@ class APIController extends Controller
     }
 
     $this->storeLikesDislikes($likes, $dislikes);
-    return "done";
+
     $tagsString = "";
     $tags = $this->getTagsForIllustrations($likes);
     $tagsString = $tagsString . array_pop($tags);
