@@ -314,13 +314,14 @@ class APIController extends Controller
 
     $subject = "Jouw favoriete boeken verzameld door Bieblo";
 
-    //if(isset($_POST['email']) && isset($_POST['books'])){
-    if(isset($_GET['email'])){
-      $mail = $_GET['email'];
-      Mail::queue('emails.welcome', [], function ($message) use ($mail) {
+    if(isset($_POST['email']) && isset($_POST['books'])){
+      $mail = $_POST['email'];
+      $books = $_POST['books'];
+      Mail::queue('emails.email', [], function ($message) use ($mail, $books){
         $message->to($mail);
 
         $message->subject("Test");
+
       });
     }
 
