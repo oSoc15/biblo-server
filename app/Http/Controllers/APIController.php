@@ -41,7 +41,7 @@ class APIController extends Controller
       $dislikes = [];
     }
 
-    //$this->storeLikesDislikes($likes, $dislikes);
+    $this->storeLikesDislikes($likes, $dislikes);
 
     $tagsString = "";
     $tags = $this->getTagsForIllustrations($likes);
@@ -74,7 +74,7 @@ class APIController extends Controller
     //Build BIBnet API URL
     //$url = "http://" . $server . ".staging.aquabrowser.be//api/v0/search/?q=" . $tagsString . " AND (language:" . $language . " AND format:" . $format . " AND " . $age . ")&authorization=26f9ce7cdcbe09df6f0b37d79b6c4dc2";
     $url = "http://zoeken.gent.bibliotheek.be//api/v0/search/?q=" . $tagsString . " AND (language:" . $language . " AND format:" . $format . " AND " . $age . ")&authorization=26f9ce7cdcbe09df6f0b37d79b6c4dc2";
-    return ($url);
+
     $xml = simplexml_load_file(urlencode($url)); //retrieve URL and parse XML content
     $json = json_encode($xml);
 
@@ -314,14 +314,14 @@ class APIController extends Controller
 
     $subject = "Jouw favoriete boeken verzameld door Bieblo";
 
-    //if(isset($_POST['email']) && isset($_POST['books'])){
-    if(isset($_GET['email'])){
-      Mail::queue('emails.welcome', [], function ($message) use ($subject) {
-        $message->from('info@bieblo.be', 'Bieblo');
+    if(isset($_POST['email']) && isset($_POST['books'])){
+      $mail = $_POST['email'];
+      $books = $_POST['books'];
+      Mail::queue('emails.email', [], function ($message) use ($mail, $books){
+        $message->to($mail);
 
-        $message->to($_GET['email']);
+        $message->subject("Test");
 
-        $message->subject($subject);
       });
     }
 

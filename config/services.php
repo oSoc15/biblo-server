@@ -34,5 +34,8 @@ return [
         'key'    => '',
         'secret' => '',
     ],
+    'mandrill' => [
+        'secret' => 'zhHvzwv9FB7a74E8q4kt5w',
+    ],
 
 ];
