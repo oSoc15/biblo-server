@@ -6,3 +6,4 @@ Homestead.yaml
 .bowerrc
 /public/build
 /storage/database.sqlite
+.DS_Store
